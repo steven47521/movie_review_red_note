@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+*.egg
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+.next/
+.nuxt/
+dist/
+
+# Docker
+*.dockerignore
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+.claude/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database (local dev)
+*.db
+
+# Demo raw footage (keep only docs/demo/演示视频提交.mp4 for submission)
+演示视频原始.mp4
+
+# Generated user content
+backend/static/images/
+
+# Alembic
+alembic/versions/*.pyc
