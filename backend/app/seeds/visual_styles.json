@@ -1,0 +1,34 @@
+{
+  "drama_film": {
+    "label": "胶片戏剧感",
+    "genres": ["Drama", "Crime", "War"],
+    "cover_template": "Cinematic film poster for '{title}', {style_hint}, moody lighting, no text overlay, Xiaohongshu aesthetic",
+    "quote_template": "Minimal quote card, Chinese text: '{quote}', elegant typography, film grain, {style_hint}",
+    "mood_template": "Atmospheric cinematic scene inspired by '{title}' theme '{angle}', symbolic, no copyrighted characters, {style_hint}",
+    "theme_template": "Abstract visual metaphor for '{angle}' from movie '{title}', editorial layout, {style_hint}"
+  },
+  "sci_fi": {
+    "label": "科幻哲学感",
+    "genres": ["Sci-Fi", "Fantasy"],
+    "cover_template": "Sci-fi movie poster '{title}', cosmic minimalism, {style_hint}, premium Xiaohongshu style",
+    "quote_template": "Futuristic quote card with text '{quote}', clean layout, {style_hint}",
+    "mood_template": "Surreal sci-fi atmosphere for '{title}', theme '{angle}', no movie stills, {style_hint}",
+    "theme_template": "Concept art visualizing '{angle}' from '{title}', {style_hint}"
+  },
+  "romance": {
+    "label": "文艺浪漫感",
+    "genres": ["Romance", "Family"],
+    "cover_template": "Soft romantic film poster mood for '{title}', warm tones, {style_hint}",
+    "quote_template": "Dreamy quote card '{quote}', pastel tones, {style_hint}",
+    "mood_template": "Emotional cinematic mood shot, '{title}', theme '{angle}', {style_hint}",
+    "theme_template": "Poetic visual for '{angle}', movie '{title}', {style_hint}"
+  },
+  "default": {
+    "label": "经典电影感",
+    "genres": [],
+    "cover_template": "Classic film poster atmosphere for '{title}', {style_hint}, high-end social media visual",
+    "quote_template": "Stylish quote card with '{quote}', magazine layout, {style_hint}",
+    "mood_template": "Cinematic mood image for '{title}', theme '{angle}', {style_hint}",
+    "theme_template": "Editorial keyword visual for '{angle}' and '{title}', {style_hint}"
+  }
+}

@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "f87f77aa-42cc-4316-89f2-aa9d71b8371b",
+    "mbti": "INTJ",
+    "age_band": "20s",
+    "nickname": "INTJ影评人·20s",
+    "avatar_url": "/avatars/intj_20s.png",
+    "taste_profile": {
+      "focus": "structure",
+      "tone": "analytical",
+      "age_band": "20s",
+      "mbti": "INTJ"
+    }
+  },
+  {
+    "id": "985f6234-d40b-4da8-ae87-1ca0d190f529",
+    "mbti": "INTJ",
+    "age_band": "30s",
+    "nickname": "INTJ影评人·30s",
+    "avatar_url": "/avatars/intj_30s.png",
+    "taste_profile": {
+      "focus": "structure",
+      "tone": "analytical",
+      "age_band": "30s",
+      "mbti": "INTJ"
+    }
+  },
+  {
+    "id": "7aaca9de-0bee-467a-bfba-beb06014420e",
+    "mbti": "INTJ",
+    "age_band": "40s",
+    "nickname": "INTJ影评人·40s",
+    "avatar_url": "/avatars/intj_40s.png",
+    "taste_profile": {
+      "focus": "structure",
+      "tone": "analytical",
+      "age_band": "40s",
+      "mbti": "INTJ"
+    }
+  },
+  {
+    "id": "466bd7c5-3f78-4613-84c2-ab93f81f362e",
+    "mbti": "INTJ",
+    "age_band": "50s",
+    "nickname": "INTJ影评人·50s",
+    "avatar_url": "/avatars/intj_50s.png",
+    "taste_profile": {
+      "focus": "structure",
+      "tone": "analytical",
+      "age_band": "50s",
+      "mbti": "INTJ"
+    }
+  },
+  {
+    "id": "eab6a837-81c0-48a7-a25e-c461d69a9108",
+    "mbti": "INTJ",
+    "age_band": "60s+",
+    "nickname": "INTJ影评人·60s+",
+    "avatar_url": "/avatars/intj_60splus.png",
+    "taste_profile": {
+      "focus": "structure",
+      "tone": "analytical",
+      "age_band": "60s+",
+      "mbti": "INTJ"
+    }
+  },
+  {
+    "id": "11fc95ad-3fca-416d-9b0a-dbf14525dee4",
+    "mbti": "INTP",
+    "age_band": "20s",
+    "nickname": "INTP影评人·20s",
+    "avatar_url": "/avatars/intp_20s.png",
+    "taste_profile": {
+      "focus": "ideas",
+      "tone": "curious",
+      "age_band": "20s",
+      "mbti": "INTP"
+    }
+  },
+  {
+    "id": "f138aead-4c59-4412-8be0-a1446ee4193a",
+    "mbti": "INTP",
+    "age_band": "30s",
+    "nickname": "INTP影评人·30s",
+    "avatar_url": "/avatars/intp_30s.png",
+    "taste_profile": {
+      "focus": "ideas",
+      "tone": "curious",
+      "age_band": "30s",
+      "mbti": "INTP"
+    }
+  },
+  {
+    "id": "316af2a2-6f70-47c0-a656-f8dcdf3760a7",
+    "mbti": "INTP",
+    "age_band": "40s",
+    "nickname": "INTP影评人·40s",
+    "avatar_url": "/avatars/intp_40s.png",
+    "taste_profile": {
+      "focus": "ideas",
+      "tone": "curious",
+      "age_band": "40s",
+      "mbti": "INTP"
+    }
+  },
+  {
+    "id": "a422cba5-b7bc-406d-9ac8-e1ac5e98186f",
+    "mbti": "INTP",
+    "age_band": "50s",
+    "nickname": "INTP影评人·50s",
+    "avatar_url": "/avatars/intp_50s.png",
+    "taste_profile": {
+      "focus": "ideas",
+      "tone": "curious",
+      "age_band": "50s",
+      "mbti": "INTP"
+    }
+  },
+  {
+    "id": "8862a497-2034-472a-8af2-07d23d157ff0",
+    "mbti": "INTP",
+    "age_band": "60s+",
+    "nickname": "INTP影评人·60s+",
+    "avatar_url": "/avatars/intp_60splus.png",
+    "taste_profile": {
+      "focus": "ideas",
+      "tone": "curious",
+      "age_band": "60s+",
+      "mbti": "INTP"
+    }
+  },
+  {
+    "id": "e3c1070f-0b9d-4d1e-b081-9f13193302ac",
+    "mbti": "ENTJ",
+    "age_band": "20s",
+    "nickname": "ENTJ影评人·20s",
+    "avatar_url": "/avatars/entj_20s.png",
+    "taste_profile": {
+      "focus": "argument",
+      "tone": "direct",
+      "age_band": "20s",
+      "mbti": "ENTJ"
+    }
+  },
+  {
+    "id": "9b5c184b-579b-4c9b-ad36-804447dbc9cd",
+    "mbti": "ENTJ",
+    "age_band": "30s",
+    "nickname": "ENTJ影评人·30s",
+    "avatar_url": "/avatars/entj_30s.png",
+    "taste_profile": {
+      "focus": "argument",
+      "tone": "direct",
+      "age_band": "30s",
+      "mbti": "ENTJ"
+    }
+  },
+  {
+    "id": "ea193c02-6bd1-4ae1-b203-6c14e677502a",
+    "mbti": "ENTJ",
+    "age_band": "40s",
+    "nickname": "ENTJ影评人·40s",
+    "avatar_url": "/avatars/entj_40s.png",
+    "taste_profile": {
+      "focus": "argument",
+      "tone": "direct",
+      "age_band": "40s",
+      "mbti": "ENTJ"
+    }
+  },
+  {
+    "id": "fa40a760-cfe0-40ab-8859-015c81e0686e",
+    "mbti": "ENTJ",
+    "age_band": "50s",
+    "nickname": "ENTJ影评人·50s",
+    "avatar_url": "/avatars/entj_50s.png",
+    "taste_profile": {
+      "focus": "argument",
+      "tone": "direct",
+      "age_band": "50s",
+      "mbti": "ENTJ"
+    }
+  },
+  {
+    "id": "0a0aaf34-4410-4364-a803-14c652b45f5c",
+    "mbti": "ENTJ",
+    "age_band": "60s+",
+    "nickname": "ENTJ影评人·60s+",
+    "avatar_url": "/avatars/entj_60splus.png",
+    "taste_profile": {
+      "focus": "argument",
+      "tone": "direct",
+      "age_band": "60s+",
+      "mbti": "ENTJ"
+    }
+  },
+  {
+    "id": "5ce22b9d-ab2a-448f-8cc4-1ece5a607755",
+    "mbti": "ENTP",
+    "age_band": "20s",
+    "nickname": "ENTP影评人·20s",
+    "avatar_url": "/avatars/entp_20s.png",
+    "taste_profile": {
+      "focus": "debate",
+      "tone": "witty",
+      "age_band": "20s",
+      "mbti": "ENTP"
+    }
+  },
+  {
+    "id": "4baff868-6a3f-4757-861f-df0b3976bf08",
+    "mbti": "ENTP",
+    "age_band": "30s",
+    "nickname": "ENTP影评人·30s",
+    "avatar_url": "/avatars/entp_30s.png",
+    "taste_profile": {
+      "focus": "debate",
+      "tone": "witty",
+      "age_band": "30s",
+      "mbti": "ENTP"
+    }
+  },
+  {
+    "id": "26665556-dc37-4a75-9738-63175008b321",
+    "mbti": "ENTP",
+    "age_band": "40s",
+    "nickname": "ENTP影评人·40s",
+    "avatar_url": "/avatars/entp_40s.png",
+    "taste_profile": {
+      "focus": "debate",
+      "tone": "witty",
+      "age_band": "40s",
+      "mbti": "ENTP"
+    }
+  },
+  {
+    "id": "8ceadf49-ca23-4432-83b7-66bbf829d2d8",
+    "mbti": "ENTP",
+    "age_band": "50s",
+    "nickname": "ENTP影评人·50s",
+    "avatar_url": "/avatars/entp_50s.png",
+    "taste_profile": {
+      "focus": "debate",
+      "tone": "witty",
+      "age_band": "50s",
+      "mbti": "ENTP"
+    }
+  },
+  {
+    "id": "72c0fb6b-773b-41ab-bdda-0735f1a9c5bb",
+    "mbti": "ENTP",
+    "age_band": "60s+",
+    "nickname": "ENTP影评人·60s+",
+    "avatar_url": "/avatars/entp_60splus.png",
+    "taste_profile": {
+      "focus": "debate",
+      "tone": "witty",
+      "age_band": "60s+",
+      "mbti": "ENTP"
+    }
+  },
+  {
+    "id": "c4927a04-7c7b-4baa-8aec-96786db9ad44",
+    "mbti": "INFJ",
+    "age_band": "20s",
+    "nickname": "INFJ影评人·20s",
+    "avatar_url": "/avatars/infj_20s.png",
+    "taste_profile": {
+      "focus": "meaning",
+      "tone": "empathetic",
+      "age_band": "20s",
+      "mbti": "INFJ"
+    }
+  },
+  {
+    "id": "b5f449bb-b64b-47e3-b3f2-9a62b47e3a4f",
+    "mbti": "INFJ",
+    "age_band": "30s",
+    "nickname": "INFJ影评人·30s",
+    "avatar_url": "/avatars/infj_30s.png",
+    "taste_profile": {
+      "focus": "meaning",
+      "tone": "empathetic",
+      "age_band": "30s",
+      "mbti": "INFJ"
+    }
+  },
+  {
+    "id": "d82486ea-5bdb-4c88-80d6-35f7e845c10e",
+    "mbti": "INFJ",
+    "age_band": "40s",
+    "nickname": "INFJ影评人·40s",
+    "avatar_url": "/avatars/infj_40s.png",
+    "taste_profile": {
+      "focus": "meaning",
+      "tone": "empathetic",
+      "age_band": "40s",
+      "mbti": "INFJ"
+    }
+  },
+  {
+    "id": "cbd8ecda-7545-43e1-8738-07a35b2b86e2",
+    "mbti": "INFJ",
+    "age_band": "50s",
+    "nickname": "INFJ影评人·50s",
+    "avatar_url": "/avatars/infj_50s.png",
+    "taste_profile": {
+      "focus": "meaning",
+      "tone": "empathetic",
+      "age_band": "50s",
+      "mbti": "INFJ"
+    }
+  },
+  {
+    "id": "f686b9f0-d232-4292-a48b-96fb2c1d8998",
+    "mbti": "INFJ",
+    "age_band": "60s+",
+    "nickname": "INFJ影评人·60s+",
+    "avatar_url": "/avatars/infj_60splus.png",
+    "taste_profile": {
+      "focus": "meaning",
+      "tone": "empathetic",
+      "age_band": "60s+",
+      "mbti": "INFJ"
+    }
+  },
+  {
+    "id": "cddf18ec-157a-421f-a3bd-3db16ff4f059",
+    "mbti": "INFP",
+    "age_band": "20s",
+    "nickname": "INFP影评人·20s",
+    "avatar_url": "/avatars/infp_20s.png",
+    "taste_profile": {
+      "focus": "values",
+      "tone": "poetic",
+      "age_band": "20s",
+      "mbti": "INFP"
+    }
+  },
+  {
+    "id": "a57a4467-0f03-4af9-9bd3-8c456682acd5",
+    "mbti": "INFP",
+    "age_band": "30s",
+    "nickname": "INFP影评人·30s",
+    "avatar_url": "/avatars/infp_30s.png",
+    "taste_profile": {
+      "focus": "values",
+      "tone": "poetic",
+      "age_band": "30s",
+      "mbti": "INFP"
+    }
+  },
+  {
+    "id": "5a6e019e-996f-4c05-89b4-4cf9cf2222f5",
+    "mbti": "INFP",
+    "age_band": "40s",
+    "nickname": "INFP影评人·40s",
+    "avatar_url": "/avatars/infp_40s.png",
+    "taste_profile": {
+      "focus": "values",
+      "tone": "poetic",
+      "age_band": "40s",
+      "mbti": "INFP"
+    }
+  },
+  {
+    "id": "920f2938-52d6-408a-98f9-1fedc62a6e2a",
+    "mbti": "INFP",
+    "age_band": "50s",
+    "nickname": "INFP影评人·50s",
+    "avatar_url": "/avatars/infp_50s.png",
+    "taste_profile": {
+      "focus": "values",
+      "tone": "poetic",
+      "age_band": "50s",
+      "mbti": "INFP"
+    }
+  },
+  {
+    "id": "3e268ac8-355c-4099-a7dc-61e7aff1b843",
+    "mbti": "INFP",
+    "age_band": "60s+",
+    "nickname": "INFP影评人·60s+",
+    "avatar_url": "/avatars/infp_60splus.png",
+    "taste_profile": {
+      "focus": "values",
+      "tone": "poetic",
+      "age_band": "60s+",
+      "mbti": "INFP"
+    }
+  },
+  {
+    "id": "84789956-0881-44fa-aeff-4b59733dc4e7",
+    "mbti": "ENFJ",
+    "age_band": "20s",
+    "nickname": "ENFJ影评人·20s",
+    "avatar_url": "/avatars/enfj_20s.png",
+    "taste_profile": {
+      "focus": "resonance",
+      "tone": "warm",
+      "age_band": "20s",
+      "mbti": "ENFJ"
+    }
+  },
+  {
+    "id": "d4c5d77a-e2a8-4d55-becc-53f3266a8443",
+    "mbti": "ENFJ",
+    "age_band": "30s",
+    "nickname": "ENFJ影评人·30s",
+    "avatar_url": "/avatars/enfj_30s.png",
+    "taste_profile": {
+      "focus": "resonance",
+      "tone": "warm",
+      "age_band": "30s",
+      "mbti": "ENFJ"
+    }
+  },
+  {
+    "id": "f1a02210-7da1-405b-a11b-67ba7202391f",
+    "mbti": "ENFJ",
+    "age_band": "40s",
+    "nickname": "ENFJ影评人·40s",
+    "avatar_url": "/avatars/enfj_40s.png",
+    "taste_profile": {
+      "focus": "resonance",
+      "tone": "warm",
+      "age_band": "40s",
+      "mbti": "ENFJ"
+    }
+  },
+  {
+    "id": "9daf2f96-aeef-4e94-bef2-ea8c64868f2d",
+    "mbti": "ENFJ",
+    "age_band": "50s",
+    "nickname": "ENFJ影评人·50s",
+    "avatar_url": "/avatars/enfj_50s.png",
+    "taste_profile": {
+      "focus": "resonance",
+      "tone": "warm",
+      "age_band": "50s",
+      "mbti": "ENFJ"
+    }
+  },
+  {
+    "id": "29703c4e-6179-4fea-bc10-c22a8ff80359",
+    "mbti": "ENFJ",
+    "age_band": "60s+",
+    "nickname": "ENFJ影评人·60s+",
+    "avatar_url": "/avatars/enfj_60splus.png",
+    "taste_profile": {
+      "focus": "resonance",
+      "tone": "warm",
+      "age_band": "60s+",
+      "mbti": "ENFJ"
+    }
+  },
+  {
+    "id": "0b486da9-de67-47db-bf69-23ddbb511761",
+    "mbti": "ENFP",
+    "age_band": "20s",
+    "nickname": "ENFP影评人·20s",
+    "avatar_url": "/avatars/enfp_20s.png",
+    "taste_profile": {
+      "focus": "emotion",
+      "tone": "energetic",
+      "age_band": "20s",
+      "mbti": "ENFP"
+    }
+  },
+  {
+    "id": "5b2b7986-8f91-44d3-9e7b-3fb5687f48ca",
+    "mbti": "ENFP",
+    "age_band": "30s",
+    "nickname": "ENFP影评人·30s",
+    "avatar_url": "/avatars/enfp_30s.png",
+    "taste_profile": {
+      "focus": "emotion",
+      "tone": "energetic",
+      "age_band": "30s",
+      "mbti": "ENFP"
+    }
+  },
+  {
+    "id": "792e8f76-251d-40ff-818e-6b752bc9628f",
+    "mbti": "ENFP",
+    "age_band": "40s",
+    "nickname": "ENFP影评人·40s",
+    "avatar_url": "/avatars/enfp_40s.png",
+    "taste_profile": {
+      "focus": "emotion",
+      "tone": "energetic",
+      "age_band": "40s",
+      "mbti": "ENFP"
+    }
+  },
+  {
+    "id": "57ebe538-7e06-4634-8d7c-2e97389c5910",
+    "mbti": "ENFP",
+    "age_band": "50s",
+    "nickname": "ENFP影评人·50s",
+    "avatar_url": "/avatars/enfp_50s.png",
+    "taste_profile": {
+      "focus": "emotion",
+      "tone": "energetic",
+      "age_band": "50s",
+      "mbti": "ENFP"
+    }
+  },
+  {
+    "id": "5129fd9a-6389-47ed-bdfb-4fccfd726bb2",
+    "mbti": "ENFP",
+    "age_band": "60s+",
+    "nickname": "ENFP影评人·60s+",
+    "avatar_url": "/avatars/enfp_60splus.png",
+    "taste_profile": {
+      "focus": "emotion",
+      "tone": "energetic",
+      "age_band": "60s+",
+      "mbti": "ENFP"
+    }
+  },
+  {
+    "id": "d3b7dc60-ddc9-44bf-9927-1e0b9405579b",
+    "mbti": "ISTJ",
+    "age_band": "20s",
+    "nickname": "ISTJ影评人·20s",
+    "avatar_url": "/avatars/istj_20s.png",
+    "taste_profile": {
+      "focus": "craft",
+      "tone": "precise",
+      "age_band": "20s",
+      "mbti": "ISTJ"
+    }
+  },
+  {
+    "id": "7530e427-1a25-4b7f-81d1-dbfed69cd60a",
+    "mbti": "ISTJ",
+    "age_band": "30s",
+    "nickname": "ISTJ影评人·30s",
+    "avatar_url": "/avatars/istj_30s.png",
+    "taste_profile": {
+      "focus": "craft",
+      "tone": "precise",
+      "age_band": "30s",
+      "mbti": "ISTJ"
+    }
+  },
+  {
+    "id": "b494eda8-6889-4834-95c2-6404fedbdbd9",
+    "mbti": "ISTJ",
+    "age_band": "40s",
+    "nickname": "ISTJ影评人·40s",
+    "avatar_url": "/avatars/istj_40s.png",
+    "taste_profile": {
+      "focus": "craft",
+      "tone": "precise",
+      "age_band": "40s",
+      "mbti": "ISTJ"
+    }
+  },
+  {
+    "id": "2c169146-a411-4ca2-83af-571cc6ef5bf7",
+    "mbti": "ISTJ",
+    "age_band": "50s",
+    "nickname": "ISTJ影评人·50s",
+    "avatar_url": "/avatars/istj_50s.png",
+    "taste_profile": {
+      "focus": "craft",
+      "tone": "precise",
+      "age_band": "50s",
+      "mbti": "ISTJ"
+    }
+  },
+  {
+    "id": "e0aaa0f6-9579-47a8-86e6-37f3078c571d",
+    "mbti": "ISTJ",
+    "age_band": "60s+",
+    "nickname": "ISTJ影评人·60s+",
+    "avatar_url": "/avatars/istj_60splus.png",
+    "taste_profile": {
+      "focus": "craft",
+      "tone": "precise",
+      "age_band": "60s+",
+      "mbti": "ISTJ"
+    }
+  },
+  {
+    "id": "658dfbe4-55b5-41dd-a9af-0973c9b7a685",
+    "mbti": "ISFJ",
+    "age_band": "20s",
+    "nickname": "ISFJ影评人·20s",
+    "avatar_url": "/avatars/isfj_20s.png",
+    "taste_profile": {
+      "focus": "character",
+      "tone": "gentle",
+      "age_band": "20s",
+      "mbti": "ISFJ"
+    }
+  },
+  {
+    "id": "70dad120-688b-4def-9994-b999ba5610c6",
+    "mbti": "ISFJ",
+    "age_band": "30s",
+    "nickname": "ISFJ影评人·30s",
+    "avatar_url": "/avatars/isfj_30s.png",
+    "taste_profile": {
+      "focus": "character",
+      "tone": "gentle",
+      "age_band": "30s",
+      "mbti": "ISFJ"
+    }
+  },
+  {
+    "id": "c310d2dc-904d-4657-a9af-15bb77efb029",
+    "mbti": "ISFJ",
+    "age_band": "40s",
+    "nickname": "ISFJ影评人·40s",
+    "avatar_url": "/avatars/isfj_40s.png",
+    "taste_profile": {
+      "focus": "character",
+      "tone": "gentle",
+      "age_band": "40s",
+      "mbti": "ISFJ"
+    }
+  },
+  {
+    "id": "3be4bbe7-1a8c-4f82-9c0c-73e201955aba",
+    "mbti": "ISFJ",
+    "age_band": "50s",
+    "nickname": "ISFJ影评人·50s",
+    "avatar_url": "/avatars/isfj_50s.png",
+    "taste_profile": {
+      "focus": "character",
+      "tone": "gentle",
+      "age_band": "50s",
+      "mbti": "ISFJ"
+    }
+  },
+  {
+    "id": "6d771428-b42e-4edd-ba43-75f4cb131fed",
+    "mbti": "ISFJ",
+    "age_band": "60s+",
+    "nickname": "ISFJ影评人·60s+",
+    "avatar_url": "/avatars/isfj_60splus.png",
+    "taste_profile": {
+      "focus": "character",
+      "tone": "gentle",
+      "age_band": "60s+",
+      "mbti": "ISFJ"
+    }
+  },
+  {
+    "id": "41f69218-7b42-4828-a8f3-0be2869a0395",
+    "mbti": "ESTJ",
+    "age_band": "20s",
+    "nickname": "ESTJ影评人·20s",
+    "avatar_url": "/avatars/estj_20s.png",
+    "taste_profile": {
+      "focus": "clarity",
+      "tone": "firm",
+      "age_band": "20s",
+      "mbti": "ESTJ"
+    }
+  },
+  {
+    "id": "f353867c-6147-4c27-979e-f84937911b76",
+    "mbti": "ESTJ",
+    "age_band": "30s",
+    "nickname": "ESTJ影评人·30s",
+    "avatar_url": "/avatars/estj_30s.png",
+    "taste_profile": {
+      "focus": "clarity",
+      "tone": "firm",
+      "age_band": "30s",
+      "mbti": "ESTJ"
+    }
+  },
+  {
+    "id": "6d85f75d-829e-4663-88cf-3d1c8a662da5",
+    "mbti": "ESTJ",
+    "age_band": "40s",
+    "nickname": "ESTJ影评人·40s",
+    "avatar_url": "/avatars/estj_40s.png",
+    "taste_profile": {
+      "focus": "clarity",
+      "tone": "firm",
+      "age_band": "40s",
+      "mbti": "ESTJ"
+    }
+  },
+  {
+    "id": "73c19d87-db87-4ec9-99fd-be44892772ec",
+    "mbti": "ESTJ",
+    "age_band": "50s",
+    "nickname": "ESTJ影评人·50s",
+    "avatar_url": "/avatars/estj_50s.png",
+    "taste_profile": {
+      "focus": "clarity",
+      "tone": "firm",
+      "age_band": "50s",
+      "mbti": "ESTJ"
+    }
+  },
+  {
+    "id": "48fb40b7-5e6e-43d8-b377-bdf5fea409a7",
+    "mbti": "ESTJ",
+    "age_band": "60s+",
+    "nickname": "ESTJ影评人·60s+",
+    "avatar_url": "/avatars/estj_60splus.png",
+    "taste_profile": {
+      "focus": "clarity",
+      "tone": "firm",
+      "age_band": "60s+",
+      "mbti": "ESTJ"
+    }
+  },
+  {
+    "id": "c53478f4-c3bc-4449-a46d-caa6f826d5d3",
+    "mbti": "ESFJ",
+    "age_band": "20s",
+    "nickname": "ESFJ影评人·20s",
+    "avatar_url": "/avatars/esfj_20s.png",
+    "taste_profile": {
+      "focus": "audience",
+      "tone": "friendly",
+      "age_band": "20s",
+      "mbti": "ESFJ"
+    }
+  },
+  {
+    "id": "4ca77bc9-1757-47d9-984b-e61c16963ddb",
+    "mbti": "ESFJ",
+    "age_band": "30s",
+    "nickname": "ESFJ影评人·30s",
+    "avatar_url": "/avatars/esfj_30s.png",
+    "taste_profile": {
+      "focus": "audience",
+      "tone": "friendly",
+      "age_band": "30s",
+      "mbti": "ESFJ"
+    }
+  },
+  {
+    "id": "eccdf2c2-21b0-4877-81a0-90b233ef3e14",
+    "mbti": "ESFJ",
+    "age_band": "40s",
+    "nickname": "ESFJ影评人·40s",
+    "avatar_url": "/avatars/esfj_40s.png",
+    "taste_profile": {
+      "focus": "audience",
+      "tone": "friendly",
+      "age_band": "40s",
+      "mbti": "ESFJ"
+    }
+  },
+  {
+    "id": "1682320e-87eb-410f-8c3a-26d2e62117ad",
+    "mbti": "ESFJ",
+    "age_band": "50s",
+    "nickname": "ESFJ影评人·50s",
+    "avatar_url": "/avatars/esfj_50s.png",
+    "taste_profile": {
+      "focus": "audience",
+      "tone": "friendly",
+      "age_band": "50s",
+      "mbti": "ESFJ"
+    }
+  },
+  {
+    "id": "7933297c-0102-4c7c-b89b-6ce238da7ead",
+    "mbti": "ESFJ",
+    "age_band": "60s+",
+    "nickname": "ESFJ影评人·60s+",
+    "avatar_url": "/avatars/esfj_60splus.png",
+    "taste_profile": {
+      "focus": "audience",
+      "tone": "friendly",
+      "age_band": "60s+",
+      "mbti": "ESFJ"
+    }
+  },
+  {
+    "id": "db09669b-1179-451b-ab9a-1532b1f5364c",
+    "mbti": "ISTP",
+    "age_band": "20s",
+    "nickname": "ISTP影评人·20s",
+    "avatar_url": "/avatars/istp_20s.png",
+    "taste_profile": {
+      "focus": "visuals",
+      "tone": "cool",
+      "age_band": "20s",
+      "mbti": "ISTP"
+    }
+  },
+  {
+    "id": "e664ef15-0153-4760-80ad-d8cccc986417",
+    "mbti": "ISTP",
+    "age_band": "30s",
+    "nickname": "ISTP影评人·30s",
+    "avatar_url": "/avatars/istp_30s.png",
+    "taste_profile": {
+      "focus": "visuals",
+      "tone": "cool",
+      "age_band": "30s",
+      "mbti": "ISTP"
+    }
+  },
+  {
+    "id": "69117360-4d3b-458b-a978-3ed277a7caab",
+    "mbti": "ISTP",
+    "age_band": "40s",
+    "nickname": "ISTP影评人·40s",
+    "avatar_url": "/avatars/istp_40s.png",
+    "taste_profile": {
+      "focus": "visuals",
+      "tone": "cool",
+      "age_band": "40s",
+      "mbti": "ISTP"
+    }
+  },
+  {
+    "id": "2c69cf0c-9852-44da-aa9b-71d4eafe82d6",
+    "mbti": "ISTP",
+    "age_band": "50s",
+    "nickname": "ISTP影评人·50s",
+    "avatar_url": "/avatars/istp_50s.png",
+    "taste_profile": {
+      "focus": "visuals",
+      "tone": "cool",
+      "age_band": "50s",
+      "mbti": "ISTP"
+    }
+  },
+  {
+    "id": "2f96b729-6652-4c01-93d3-c50afcc1c532",
+    "mbti": "ISTP",
+    "age_band": "60s+",
+    "nickname": "ISTP影评人·60s+",
+    "avatar_url": "/avatars/istp_60splus.png",
+    "taste_profile": {
+      "focus": "visuals",
+      "tone": "cool",
+      "age_band": "60s+",
+      "mbti": "ISTP"
+    }
+  },
+  {
+    "id": "9425239d-c550-4f3b-98f4-e14ce8085fe2",
+    "mbti": "ISFP",
+    "age_band": "20s",
+    "nickname": "ISFP影评人·20s",
+    "avatar_url": "/avatars/isfp_20s.png",
+    "taste_profile": {
+      "focus": "aesthetics",
+      "tone": "sensitive",
+      "age_band": "20s",
+      "mbti": "ISFP"
+    }
+  },
+  {
+    "id": "3d6c4d8e-339e-4ea1-b8f7-9805e07a229f",
+    "mbti": "ISFP",
+    "age_band": "30s",
+    "nickname": "ISFP影评人·30s",
+    "avatar_url": "/avatars/isfp_30s.png",
+    "taste_profile": {
+      "focus": "aesthetics",
+      "tone": "sensitive",
+      "age_band": "30s",
+      "mbti": "ISFP"
+    }
+  },
+  {
+    "id": "fd50e8c3-abe8-4a05-be77-a967b4243bd2",
+    "mbti": "ISFP",
+    "age_band": "40s",
+    "nickname": "ISFP影评人·40s",
+    "avatar_url": "/avatars/isfp_40s.png",
+    "taste_profile": {
+      "focus": "aesthetics",
+      "tone": "sensitive",
+      "age_band": "40s",
+      "mbti": "ISFP"
+    }
+  },
+  {
+    "id": "857a8396-0b71-49f3-8064-900d27577a37",
+    "mbti": "ISFP",
+    "age_band": "50s",
+    "nickname": "ISFP影评人·50s",
+    "avatar_url": "/avatars/isfp_50s.png",
+    "taste_profile": {
+      "focus": "aesthetics",
+      "tone": "sensitive",
+      "age_band": "50s",
+      "mbti": "ISFP"
+    }
+  },
+  {
+    "id": "244bd097-a7f4-4a90-a977-e0c090775803",
+    "mbti": "ISFP",
+    "age_band": "60s+",
+    "nickname": "ISFP影评人·60s+",
+    "avatar_url": "/avatars/isfp_60splus.png",
+    "taste_profile": {
+      "focus": "aesthetics",
+      "tone": "sensitive",
+      "age_band": "60s+",
+      "mbti": "ISFP"
+    }
+  },
+  {
+    "id": "4bb724ec-c6f2-4882-97ee-08ab671951cb",
+    "mbti": "ESTP",
+    "age_band": "20s",
+    "nickname": "ESTP影评人·20s",
+    "avatar_url": "/avatars/estp_20s.png",
+    "taste_profile": {
+      "focus": "punch",
+      "tone": "bold",
+      "age_band": "20s",
+      "mbti": "ESTP"
+    }
+  },
+  {
+    "id": "98fc7d21-7f6e-46ac-8d1c-1667709cfc71",
+    "mbti": "ESTP",
+    "age_band": "30s",
+    "nickname": "ESTP影评人·30s",
+    "avatar_url": "/avatars/estp_30s.png",
+    "taste_profile": {
+      "focus": "punch",
+      "tone": "bold",
+      "age_band": "30s",
+      "mbti": "ESTP"
+    }
+  },
+  {
+    "id": "a49939a5-0902-4199-ab67-9846a83081fb",
+    "mbti": "ESTP",
+    "age_band": "40s",
+    "nickname": "ESTP影评人·40s",
+    "avatar_url": "/avatars/estp_40s.png",
+    "taste_profile": {
+      "focus": "punch",
+      "tone": "bold",
+      "age_band": "40s",
+      "mbti": "ESTP"
+    }
+  },
+  {
+    "id": "c60d0580-b4ac-4d59-9383-30f88e85406d",
+    "mbti": "ESTP",
+    "age_band": "50s",
+    "nickname": "ESTP影评人·50s",
+    "avatar_url": "/avatars/estp_50s.png",
+    "taste_profile": {
+      "focus": "punch",
+      "tone": "bold",
+      "age_band": "50s",
+      "mbti": "ESTP"
+    }
+  },
+  {
+    "id": "3049e07f-be39-401f-860d-e26e606b2d03",
+    "mbti": "ESTP",
+    "age_band": "60s+",
+    "nickname": "ESTP影评人·60s+",
+    "avatar_url": "/avatars/estp_60splus.png",
+    "taste_profile": {
+      "focus": "punch",
+      "tone": "bold",
+      "age_band": "60s+",
+      "mbti": "ESTP"
+    }
+  },
+  {
+    "id": "492fd510-ec98-48c8-ab3c-b73b94e978cc",
+    "mbti": "ESFP",
+    "age_band": "20s",
+    "nickname": "ESFP影评人·20s",
+    "avatar_url": "/avatars/esfp_20s.png",
+    "taste_profile": {
+      "focus": "vibe",
+      "tone": "playful",
+      "age_band": "20s",
+      "mbti": "ESFP"
+    }
+  },
+  {
+    "id": "fa51af06-7253-4828-ae61-8668f89ad20d",
+    "mbti": "ESFP",
+    "age_band": "30s",
+    "nickname": "ESFP影评人·30s",
+    "avatar_url": "/avatars/esfp_30s.png",
+    "taste_profile": {
+      "focus": "vibe",
+      "tone": "playful",
+      "age_band": "30s",
+      "mbti": "ESFP"
+    }
+  },
+  {
+    "id": "b6d6deb0-64cc-4ddb-9386-870737f0df22",
+    "mbti": "ESFP",
+    "age_band": "40s",
+    "nickname": "ESFP影评人·40s",
+    "avatar_url": "/avatars/esfp_40s.png",
+    "taste_profile": {
+      "focus": "vibe",
+      "tone": "playful",
+      "age_band": "40s",
+      "mbti": "ESFP"
+    }
+  },
+  {
+    "id": "dd012ec0-4676-45d3-a85a-e49d47d2af5b",
+    "mbti": "ESFP",
+    "age_band": "50s",
+    "nickname": "ESFP影评人·50s",
+    "avatar_url": "/avatars/esfp_50s.png",
+    "taste_profile": {
+      "focus": "vibe",
+      "tone": "playful",
+      "age_band": "50s",
+      "mbti": "ESFP"
+    }
+  },
+  {
+    "id": "2d41c6e2-6321-49f2-851b-5b6d05f6b228",
+    "mbti": "ESFP",
+    "age_band": "60s+",
+    "nickname": "ESFP影评人·60s+",
+    "avatar_url": "/avatars/esfp_60splus.png",
+    "taste_profile": {
+      "focus": "vibe",
+      "tone": "playful",
+      "age_band": "60s+",
+      "mbti": "ESFP"
+    }
+  }
+]
