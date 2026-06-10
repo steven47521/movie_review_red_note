@@ -28,25 +28,12 @@ dist/
 # IDE
 .vscode/
 .idea/
-.cursor/
-.claude/
 *.swp
 *.swo
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Database (local dev)
-*.db
-*.db-shm
-*.db-wal
-
-# Demo raw footage (keep only docs/demo/演示视频提交.mp4 for submission)
-演示视频原始.mp4
-
-# Generated user content
-backend/static/images/
 
 # Alembic
 alembic/versions/*.pyc

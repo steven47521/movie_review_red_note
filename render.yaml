@@ -1,0 +1,41 @@
+# Render Blueprint — 片语 RedNote
+# Docs: https://render.com/docs/blueprint-spec
+#
+# MySQL is not hosted on Render free tier. Provision MySQL on Railway (or other)
+# and set DATABASE_URL on the backend service before first deploy.
+
+services:
+  - type: web
+    name: rednote-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://api.openai.com/v1
+      - key: API_SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+
+  - type: web
+    name: rednote-web
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    dockerCommand: node server.js
+    envVars:
+      # Set before deploy; triggers rebuild with Docker build-arg NEXT_PUBLIC_API_URL
+      - key: NEXT_PUBLIC_API_URL
+        sync: false

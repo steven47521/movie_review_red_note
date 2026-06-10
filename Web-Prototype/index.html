@@ -1,0 +1,2281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>片语 RedNote 工作台</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-warm: var(--surface);
+      --fg: #111111;
+      --fg-2: var(--fg);
+      --muted: #6b6b6b;
+      --meta: var(--muted);
+      --border: #e5e5e5;
+      --border-soft: var(--border);
+      --accent: #2f6feb;
+      --accent-on: #ffffff;
+      --accent-hover: color-mix(in oklab, var(--accent), black 8%);
+      --accent-active: color-mix(in oklab, var(--accent), black 14%);
+      --success: #17a34a;
+      --warn: #eab308;
+      --danger: #dc2626;
+      --font-display: "Inter", -apple-system, system-ui, sans-serif;
+      --font-body: "Inter", -apple-system, system-ui, sans-serif;
+      --font-mono: ui-monospace, "JetBrains Mono", monospace;
+      --text-xs: 12px;
+      --text-sm: 14px;
+      --text-base: 16px;
+      --text-lg: 20px;
+      --text-xl: 24px;
+      --text-2xl: 32px;
+      --text-3xl: 48px;
+      --text-4xl: 64px;
+      --leading-body: 1.5;
+      --leading-tight: 1.2;
+      --tracking-display: -0.01em;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-12: 48px;
+      --space-20: 80px;
+      --section-y-desktop: 80px;
+      --section-y-tablet: 48px;
+      --section-y-phone: 32px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 9999px;
+      --elev-flat: none;
+      --elev-ring: 0 0 0 1px var(--border);
+      --elev-raised: 0 2px 8px color-mix(in oklab, var(--fg), transparent 92%);
+      --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+      --motion-fast: 150ms;
+      --motion-base: 200ms;
+      --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+      --container-max: 1200px;
+      --container-gutter-desktop: 24px;
+      --container-gutter-tablet: 16px;
+      --container-gutter-phone: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: var(--leading-body);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body[data-left-open="true"],
+    body[data-right-open="true"] {
+      overflow: hidden;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-display);
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 0;
+      text-wrap: pretty;
+    }
+
+    :focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    .num {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in oklab, var(--bg), var(--surface) 42%);
+      backdrop-filter: blur(14px);
+    }
+
+    .topnav-inner {
+      width: min(calc(100% - (var(--space-6) * 2)), 1500px);
+      margin: 0 auto;
+      min-height: 72px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .brand-lockup {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      letter-spacing: var(--tracking-display);
+    }
+
+    .brand-meta {
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .workspace-summary {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .meta-pill,
+    .ghost-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 32px;
+      padding: 0 var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      color: var(--fg);
+      white-space: nowrap;
+    }
+
+    .meta-pill {
+      font-size: var(--text-sm);
+    }
+
+    .ghost-pill {
+      color: var(--muted);
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        color var(--motion-fast) var(--ease-standard),
+        background var(--motion-fast) var(--ease-standard);
+    }
+
+    .ghost-pill:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+    }
+
+    .topnav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--space-3);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 40px;
+      padding: 0 var(--space-4);
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      transition:
+        background var(--motion-fast) var(--ease-standard),
+        border-color var(--motion-fast) var(--ease-standard),
+        color var(--motion-fast) var(--ease-standard),
+        transform var(--motion-fast) var(--ease-standard);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-on);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--fg);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--fg);
+    }
+
+    .btn-ghost {
+      color: var(--muted);
+      padding-inline: var(--space-3);
+    }
+
+    .btn-ghost:hover {
+      color: var(--fg);
+      background: color-mix(in oklab, var(--fg), transparent 96%);
+    }
+
+    .btn-small {
+      min-height: 32px;
+      padding-inline: var(--space-3);
+      font-size: var(--text-sm);
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    .workspace {
+      flex: 1;
+      padding: var(--space-4);
+    }
+
+    .workspace-grid {
+      width: min(100%, 1520px);
+      margin: 0 auto;
+      min-height: calc(100vh - 104px);
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 340px;
+      gap: var(--space-4);
+      align-items: stretch;
+    }
+
+    .panel {
+      min-height: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--elev-flat);
+    }
+
+    .left-rail,
+    .center-stage,
+    .right-rail {
+      overflow: hidden;
+    }
+
+    .left-rail,
+    .right-rail {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .center-stage {
+      display: grid;
+      grid-template-rows: auto auto minmax(0, 1fr) auto;
+    }
+
+    .panel-head {
+      padding: var(--space-5);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-headline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .sidebar-headline h2,
+    .stage-head h1,
+    .tabs-bar h2 {
+      font-size: var(--text-xl);
+    }
+
+    .sidebar-note,
+    .caption,
+    .small-copy {
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .rail-stack {
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      overflow-y: auto;
+    }
+
+    .filter-row,
+    .quick-row,
+    .tag-row,
+    .stage-tags {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .filter-chip {
+      min-height: 32px;
+      padding: 0 var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      background: color-mix(in oklab, var(--bg), var(--surface) 35%);
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        color var(--motion-fast) var(--ease-standard),
+        background var(--motion-fast) var(--ease-standard);
+    }
+
+    .filter-chip:hover,
+    .filter-chip[aria-pressed="true"] {
+      color: var(--fg);
+      border-color: var(--fg);
+      background: var(--surface);
+    }
+
+    .thread-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .thread-card {
+      width: 100%;
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--surface), var(--bg) 22%);
+      text-align: left;
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        background var(--motion-fast) var(--ease-standard),
+        transform var(--motion-fast) var(--ease-standard);
+    }
+
+    .thread-card:hover {
+      border-color: var(--fg);
+      transform: translateY(-1px);
+    }
+
+    .thread-card.is-active {
+      background: var(--surface);
+      border-color: var(--fg);
+      box-shadow: var(--elev-ring);
+    }
+
+    .thread-card-top,
+    .thread-card-bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .thread-card-title {
+      font-size: var(--text-base);
+      font-weight: 600;
+      letter-spacing: var(--tracking-display);
+    }
+
+    .thread-card-subtitle {
+      margin-top: var(--space-1);
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .thread-card-snippet {
+      margin-top: var(--space-3);
+      color: var(--fg);
+      font-size: var(--text-sm);
+      line-height: 1.55;
+    }
+
+    .thread-card-bottom {
+      margin-top: var(--space-4);
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 28px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-pill);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .status-pill.is-success {
+      background: color-mix(in oklab, var(--success), transparent 88%);
+      color: var(--success);
+    }
+
+    .status-pill.is-warn {
+      background: color-mix(in oklab, var(--warn), transparent 86%);
+      color: color-mix(in oklab, var(--fg), var(--warn) 35%);
+    }
+
+    .status-pill.is-danger {
+      background: color-mix(in oklab, var(--danger), transparent 88%);
+      color: var(--danger);
+    }
+
+    .status-pill.is-neutral {
+      background: color-mix(in oklab, var(--fg), transparent 94%);
+      color: var(--fg);
+    }
+
+    .status-pill.is-muted {
+      background: color-mix(in oklab, var(--muted), transparent 92%);
+      color: var(--muted);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .sidebar-library {
+      border-top: 1px solid var(--border);
+      padding-top: var(--space-4);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .library-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      align-items: center;
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .library-row strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .stage-head {
+      padding: var(--space-5);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .stage-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+
+    .stage-headline {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .stage-head h1 {
+      font-size: var(--text-2xl);
+      max-width: 18ch;
+    }
+
+    .stage-summary {
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .stage-progress {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .stage-step {
+      display: grid;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--surface), var(--bg) 18%);
+    }
+
+    .stage-step.is-current {
+      border-color: var(--fg);
+      background: var(--surface);
+    }
+
+    .stage-step.is-done {
+      border-color: color-mix(in oklab, var(--success), transparent 70%);
+      background: color-mix(in oklab, var(--success), transparent 92%);
+    }
+
+    .stage-step-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      color: var(--muted);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stage-step strong {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--fg);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .stage-step small {
+      color: var(--muted);
+      font-size: var(--text-xs);
+    }
+
+    .draft-snapshot {
+      padding: var(--space-4) var(--space-5);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      gap: var(--space-4);
+      background: color-mix(in oklab, var(--surface), var(--bg) 14%);
+    }
+
+    .snapshot-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .snapshot-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+
+    .snapshot-card {
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .snapshot-title {
+      font-size: var(--text-lg);
+    }
+
+    .hook-list,
+    .bullet-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .hook-list li,
+    .bullet-list li {
+      position: relative;
+      padding-left: var(--space-4);
+      color: var(--fg);
+      font-size: var(--text-sm);
+    }
+
+    .hook-list li::before,
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--fg);
+      transform: translateY(-50%);
+    }
+
+    .draft-excerpt {
+      color: var(--muted);
+      font-size: var(--text-sm);
+      max-height: 6.2em;
+      overflow: hidden;
+    }
+
+    .chat-scroll {
+      overflow-y: auto;
+      padding: var(--space-5);
+      display: grid;
+      gap: var(--space-4);
+      background: color-mix(in oklab, var(--surface), var(--bg) 16%);
+    }
+
+    .message {
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+
+    .message-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface), var(--bg) 24%);
+      display: grid;
+      place-items: center;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--fg);
+    }
+
+    .message-card {
+      display: grid;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .message-card.is-system {
+      background: color-mix(in oklab, var(--fg), transparent 96%);
+    }
+
+    .message-card.is-reviewer {
+      background: color-mix(in oklab, var(--surface), var(--bg) 14%);
+    }
+
+    .message-card.is-writer {
+      border-color: color-mix(in oklab, var(--fg), transparent 78%);
+    }
+
+    .message-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .message-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .role-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 var(--space-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+
+    .message-copy {
+      font-size: var(--text-sm);
+      color: var(--fg);
+      white-space: pre-line;
+    }
+
+    .message-attachment {
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--surface), var(--bg) 20%);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .attachment-title {
+      font-size: var(--text-base);
+      font-weight: 600;
+      letter-spacing: var(--tracking-display);
+    }
+
+    .attachment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .attachment-cell {
+      padding: var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .attachment-cell strong {
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .composer {
+      padding: var(--space-4) var(--space-5) var(--space-5);
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: var(--space-3);
+      background: var(--surface);
+    }
+
+    .composer-box {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--surface), var(--bg) 12%);
+      padding: var(--space-3);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .composer textarea {
+      width: 100%;
+      min-height: 88px;
+      border: 0;
+      background: transparent;
+      color: var(--fg);
+      font-size: var(--text-base);
+      line-height: var(--leading-body);
+      outline: 0;
+    }
+
+    .composer textarea::placeholder {
+      color: var(--muted);
+    }
+
+    .composer-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .quick-action {
+      min-height: 32px;
+      padding: 0 var(--space-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      color: var(--fg);
+      font-size: var(--text-sm);
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        color var(--motion-fast) var(--ease-standard);
+    }
+
+    .quick-action:hover {
+      border-color: var(--fg);
+    }
+
+    .composer-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .tabs-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: var(--space-5);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tabs-nav {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      min-height: 36px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--surface), var(--bg) 12%);
+      color: var(--muted);
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        color var(--motion-fast) var(--ease-standard),
+        background var(--motion-fast) var(--ease-standard);
+    }
+
+    .tab-btn:hover,
+    .tab-btn[aria-selected="true"] {
+      border-color: var(--fg);
+      background: var(--surface);
+      color: var(--fg);
+    }
+
+    .tabs-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-5);
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .inspector-card {
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      display: grid;
+      gap: var(--space-3);
+      background: color-mix(in oklab, var(--surface), var(--bg) 16%);
+    }
+
+    .inspector-card h3 {
+      font-size: var(--text-lg);
+    }
+
+    .reviewer-grid,
+    .asset-grid {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .reviewer-row {
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .reviewer-top,
+    .version-row-top,
+    .asset-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .reviewer-id {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .reviewer-id strong {
+      font-size: var(--text-base);
+      font-weight: 600;
+    }
+
+    .reviewer-id span {
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .reviewer-note {
+      color: var(--fg);
+      font-size: var(--text-sm);
+    }
+
+    .progress-list,
+    .audit-list,
+    .version-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .progress-row,
+    .audit-row,
+    .version-row {
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .progress-row {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .progress-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .progress-copy,
+    .audit-copy,
+    .version-excerpt {
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .audit-row {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .audit-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    .version-row {
+      display: grid;
+      gap: var(--space-3);
+      cursor: pointer;
+      transition:
+        border-color var(--motion-fast) var(--ease-standard),
+        background var(--motion-fast) var(--ease-standard);
+    }
+
+    .version-row:hover,
+    .version-row[aria-current="true"] {
+      border-color: var(--fg);
+      background: color-mix(in oklab, var(--surface), var(--bg) 12%);
+    }
+
+    .version-title {
+      font-size: var(--text-base);
+      font-weight: 600;
+    }
+
+    .artifact-shot {
+      display: grid;
+      place-items: center;
+      min-height: 148px;
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: color-mix(in oklab, var(--surface), var(--bg) 24%);
+      text-align: center;
+      color: var(--muted);
+      font-size: var(--text-sm);
+      line-height: 1.55;
+    }
+
+    .asset-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .toast {
+      position: fixed;
+      right: var(--space-4);
+      bottom: var(--space-4);
+      z-index: 60;
+      min-width: 220px;
+      max-width: 320px;
+      padding: var(--space-4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      color: var(--fg);
+      box-shadow: var(--elev-raised);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition:
+        opacity var(--motion-base) var(--ease-standard),
+        transform var(--motion-base) var(--ease-standard);
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scrim {
+      position: fixed;
+      inset: 0;
+      z-index: 25;
+      background: color-mix(in oklab, var(--fg), transparent 72%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--motion-base) var(--ease-standard);
+    }
+
+    body[data-left-open="true"] .scrim,
+    body[data-right-open="true"] .scrim {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 1260px) {
+      .workspace-grid {
+        grid-template-columns: 248px minmax(0, 1fr) 320px;
+      }
+
+      .snapshot-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .workspace-grid {
+        grid-template-columns: 248px minmax(0, 1fr);
+      }
+
+      .right-rail {
+        position: fixed;
+        top: 88px;
+        right: var(--space-4);
+        bottom: var(--space-4);
+        width: min(360px, calc(100vw - (var(--space-4) * 2)));
+        z-index: 35;
+        transform: translateX(calc(100% + var(--space-4)));
+        transition: transform var(--motion-base) var(--ease-standard);
+        box-shadow: var(--elev-raised);
+      }
+
+      body[data-right-open="true"] .right-rail {
+        transform: translateX(0);
+      }
+
+      .mobile-toggle.is-right {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .topnav-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+      .workspace-summary {
+        display: none;
+      }
+
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left-rail {
+        position: fixed;
+        top: 88px;
+        left: var(--space-4);
+        bottom: var(--space-4);
+        width: min(320px, calc(100vw - (var(--space-4) * 2)));
+        z-index: 35;
+        transform: translateX(calc(-100% - var(--space-4)));
+        transition: transform var(--motion-base) var(--ease-standard);
+        box-shadow: var(--elev-raised);
+      }
+
+      body[data-left-open="true"] .left-rail {
+        transform: translateX(0);
+      }
+
+      .mobile-toggle.is-left {
+        display: inline-flex;
+      }
+
+      .stage-title-row,
+      .composer-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .stage-progress {
+        grid-template-columns: 1fr;
+      }
+
+      .attachment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topnav-actions {
+        gap: var(--space-2);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .workspace {
+        padding: var(--space-3);
+      }
+
+      .workspace-grid {
+        min-height: calc(100vh - 88px);
+      }
+
+      .panel-head,
+      .stage-head,
+      .draft-snapshot,
+      .chat-scroll,
+      .composer,
+      .tabs-bar,
+      .tabs-content {
+        padding-inline: var(--space-4);
+      }
+
+      .topnav-inner {
+        width: min(calc(100% - (var(--space-3) * 2)), 1500px);
+        min-height: 64px;
+      }
+
+      .brand-title {
+        font-size: var(--text-base);
+      }
+
+      .brand-meta {
+        font-size: var(--text-xs);
+      }
+
+      .stage-head h1 {
+        font-size: var(--text-xl);
+      }
+
+      .thread-card,
+      .version-row,
+      .reviewer-row,
+      .progress-row,
+      .audit-row,
+      .snapshot-card,
+      .inspector-card {
+        padding: var(--space-3);
+      }
+    }
+  </style>
+</head>
+<body data-left-open="false" data-right-open="false">
+  <div class="app-shell">
+    <header class="topnav" data-od-id="topnav">
+      <div class="topnav-inner">
+        <div class="brand-lockup">
+          <strong class="brand-title">片语 RedNote</strong>
+          <span class="brand-meta">经典电影小红书稿件创作台</span>
+        </div>
+        <div class="workspace-summary" aria-label="工作台摘要">
+          <span class="meta-pill"><span class="status-dot"></span>个人创作空间</span>
+          <span class="meta-pill"><span class="num">3</span> 个进行中会话</span>
+          <span class="meta-pill">自动保存已开启</span>
+        </div>
+        <div class="topnav-actions">
+          <button class="btn btn-secondary btn-small mobile-toggle is-left" type="button" data-action="toggle-left">会话</button>
+          <button class="btn btn-secondary btn-small mobile-toggle is-right" type="button" data-action="toggle-right">侧栏</button>
+          <button class="btn btn-secondary" type="button" data-action="new-session">新建会话</button>
+          <button class="btn btn-primary" type="button" id="primaryAction">继续评审</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="workspace-grid" data-od-id="workspace-shell">
+        <aside class="panel left-rail" aria-label="会话列表">
+          <div class="panel-head">
+            <div class="sidebar-headline">
+              <div>
+                <h2>工作台</h2>
+                <p class="sidebar-note">左侧聚焦项目，右侧始终保留评审与产物。</p>
+              </div>
+            </div>
+            <div class="filter-row" id="filterRow">
+              <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">全部</button>
+              <button class="filter-chip" type="button" data-filter="text">文案中</button>
+              <button class="filter-chip" type="button" data-filter="image">配图中</button>
+              <button class="filter-chip" type="button" data-filter="done">已完成</button>
+            </div>
+          </div>
+          <div class="rail-stack">
+            <div class="thread-list" id="sessionList"></div>
+            <div class="sidebar-library">
+              <div class="library-row"><span>最近收藏</span><strong>随时查看</strong></div>
+              <div class="library-row"><span>完整时间线</span><strong>可回放</strong></div>
+              <div class="library-row"><span>发布归档</span><strong>已开启</strong></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel center-stage" aria-label="主对话区" data-od-id="chat-stage">
+          <div class="stage-head">
+            <div class="stage-tags" id="stageTags"></div>
+            <div class="stage-title-row">
+              <div class="stage-headline">
+                <h1 id="sessionTitle"></h1>
+                <p class="stage-summary" id="sessionSummary"></p>
+              </div>
+              <button class="btn btn-secondary" type="button" data-action="open-tab" data-tab="versions">查看历史版本</button>
+            </div>
+            <div class="stage-progress" id="stageProgress"></div>
+          </div>
+
+          <div class="draft-snapshot" id="draftSnapshot"></div>
+
+          <div class="chat-scroll" id="chatStream" aria-live="polite"></div>
+
+          <form class="composer" id="composerForm">
+            <div class="quick-row">
+              <button class="quick-action" type="button" data-prompt="压缩开头的剧情复述，把重点拉回到人物关系与时代空间。">压缩剧情导入</button>
+              <button class="quick-action" type="button" data-prompt="重写标题，保留高级感，但更像小红书会点开的写法。">重写标题</button>
+              <button class="quick-action" type="button" data-prompt="继续评审这一版，重点听听三位评审对引子和结尾的意见。">进入下一轮评审</button>
+              <button class="quick-action" type="button" data-prompt="整理三张配图方向：封面、金句卡、氛围图。">生成配图方向</button>
+            </div>
+            <div class="composer-box">
+              <label class="visually-hidden" for="promptInput">输入你的改稿指令</label>
+              <textarea id="promptInput" placeholder="继续像聊天一样下指令，例如：把标题更收一点，但引子要更抓人。"></textarea>
+              <div class="composer-actions">
+                <div class="composer-meta">
+                  <span class="meta-pill">/调研</span>
+                  <span class="meta-pill">/重写</span>
+                  <span class="meta-pill">/去 AI 感</span>
+                </div>
+                <button class="btn btn-primary" type="submit">发送指令</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <aside class="panel right-rail" aria-label="进度与产物侧栏">
+          <div class="tabs-bar">
+            <h2>侧栏</h2>
+            <div class="tabs-nav" id="tabNav">
+              <button class="tab-btn" type="button" data-tab="review" aria-selected="true">评审团</button>
+              <button class="tab-btn" type="button" data-tab="progress" aria-selected="false">进度</button>
+              <button class="tab-btn" type="button" data-tab="versions" aria-selected="false">版本</button>
+              <button class="tab-btn" type="button" data-tab="assets" aria-selected="false">产物</button>
+            </div>
+          </div>
+          <div class="tabs-content" id="sidePanel"></div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const stageOrder = [
+      { key: "research", label: "调研", hint: "影片元数据与主流观点" },
+      { key: "angle", label: "选题", hint: "切入点与论证路线" },
+      { key: "draft", label: "初稿", hint: "标题、引子、正文、标签" },
+      { key: "review", label: "评审", hint: "多人回合制审稿" },
+      { key: "assets", label: "配图", hint: "封面、金句卡、氛围图" }
+    ];
+
+    const sessions = [
+      {
+        id: "mood-for-love",
+        title: "《花样年华》主题向影评",
+        stageLabel: "文案评审中",
+        stageStatus: "warn",
+        stageIndex: 3,
+        primaryAction: "继续评审",
+        updatedAt: "今天 15:20",
+        filter: "text",
+        summary: "目标是把“未完成的爱欲”写成一篇更像小红书深度笔记的长文，少剧情复述，多空间与时间感。",
+        tags: ["多人评审聊天室", "电影主题稿", "空间叙事"],
+        overview: "当前锁定角度：克制欲望如何被时代空间放大。路线已经确定，正在第 2 轮文案评审。",
+        rounds: { text: 2, image: 0 },
+        currentVersionId: "v4",
+        reviewers: [
+          {
+            name: "程漾",
+            profile: "INTJ · 30s · 结构控",
+            tone: "会先看论点是否稳，再看句子有没有真正服务论点。",
+            focus: "标题高级，但第一段剧情导入仍稍长，建议更快切到“空间像第三个角色”这个论点。"
+          },
+          {
+            name: "Lin",
+            profile: "ENFP · 20s · 网感型",
+            tone: "更敏感于引子、节奏和评论区会不会想接话。",
+            focus: "第二个引子很有点开欲，但还可以更像“被一句话击中”的小红书标题。"
+          },
+          {
+            name: "周岚",
+            profile: "ISFJ · 40s · 情绪准确",
+            tone: "关心情绪是否真诚，不喜欢浮夸结论。",
+            focus: "结尾现在已经克制了很多，建议再留一点余味，不要解释得太满。"
+          }
+        ],
+        versions: [
+          {
+            id: "v4",
+            label: "v4",
+            status: "当前稿",
+            title: "原来《花样年华》最痛的，不是错过，是每一次都来不及把话说完",
+            hooks: [
+              "它最会拍的不是爱情，而是那些被空间慢慢逼出来的沉默。",
+              "走廊、钟表、雨夜和旗袍，其实都在替两个人说不出口的话发声。"
+            ],
+            excerpt: "如果把《花样年华》只看成一段错过的关系，会太轻。真正让它经久不衰的，是王家卫把欲望放进了一个几乎不能呼吸的时代容器里：狭窄的楼道、总在错身的转角、永远慢半拍的时间感。人物没有明说，空间却已经先一步泄密。",
+            tags: ["#王家卫", "#花样年华", "#电影主题笔记", "#情绪电影"]
+          },
+          {
+            id: "v3",
+            label: "v3",
+            status: "上一轮",
+            title: "《花样年华》为什么让人念念不忘？因为它拍透了爱里最难说出口的那部分",
+            hooks: [
+              "你会记住的不只是张曼玉和梁朝伟，而是那种说不出口又一直存在的气压。",
+              "真正动人的，不是他们做了什么，而是他们始终没有做什么。"
+            ],
+            excerpt: "很多人把它当作一部讲错过的电影，但它真正厉害的，是把克制写成了时代和空间共同完成的结果。",
+            tags: ["#花样年华", "#电影解读", "#王家卫"]
+          },
+          {
+            id: "v2",
+            label: "v2",
+            status: "保留稿",
+            title: "《花样年华》：越克制，越汹涌",
+            hooks: [
+              "有些电影不是靠情节击中你，而是靠气压。",
+              "王家卫把最难说出口的欲望，拍成了一条永远走不完的走廊。"
+            ],
+            excerpt: "这版更诗性，但评审认为论点还不够清晰。",
+            tags: ["#电影感", "#王家卫"]
+          }
+        ],
+        assets: [
+          {
+            type: "封面海报",
+            status: "待生成",
+            note: "留出片名和一句金句的位置，整体氛围偏潮湿、克制、深夜。",
+            placeholder: "封面方向\n走廊灯影 / 雨夜玻璃 / 旗袍侧身"
+          },
+          {
+            type: "金句卡",
+            status: "待生成",
+            note: "建议抽取“空间先一步泄密”这句，做成留白足够的排版卡。",
+            placeholder: "金句卡方向\n大字号引句 / 小字号电影名 / 干净留白"
+          },
+          {
+            type: "氛围图",
+            status: "待生成",
+            note: "不要用真实剧照，保持 AI 电影感与年代空间气质。",
+            placeholder: "氛围图方向\n狭长楼道 / 墙面阴影 / 深绿与暖黄"
+          }
+        ],
+        audit: [
+          { stage: "第 2 轮评审开始", time: "15:12", detail: "主持人要求收紧剧情复述，强化空间叙事线。" },
+          { stage: "写作助手已回写 v4", time: "15:16", detail: "标题与首段同步更新，保留两条引子供下一轮投票。" },
+          { stage: "Lin 完成网感审稿", time: "15:18", detail: "建议把标题前半句拉长，增强被转发时的停留感。" }
+        ],
+        messages: [
+          {
+            id: "m1",
+            role: "system",
+            author: "系统",
+            badge: "路由",
+            time: "14:58",
+            avatar: "SYS",
+            copy: "已匹配 3 位评审人格：INTJ 30s / ENFP 20s / ISFJ 40s。当前进入第 2 轮文案评审。"
+          },
+          {
+            id: "m2",
+            role: "user",
+            author: "你",
+            badge: "指令",
+            time: "15:03",
+            avatar: "YOU",
+            copy: "别把它写成普通爱情影评，我想更强调空间、时间和克制欲望之间的关系。"
+          },
+          {
+            id: "m3",
+            role: "writer",
+            author: "写作助手",
+            badge: "改稿",
+            time: "15:09",
+            avatar: "WRT",
+            copy: "收到。我把论点重心收束为“时代空间如何放大没说出口的欲望”，并同步更新标题与开头。",
+            attachment: {
+              title: "当前写作版本 · v4",
+              cells: [
+                { label: "标题", value: "原来《花样年华》最痛的，不是错过，是每一次都来不及把话说完" },
+                { label: "主论点", value: "空间不是背景，而是推动情绪泄露的第三个角色。" }
+              ]
+            }
+          },
+          {
+            id: "m4",
+            role: "reviewer",
+            author: "程漾",
+            badge: "INTJ",
+            time: "15:11",
+            avatar: "INTJ",
+            copy: "这版的结构已经稳了，但建议第一段更快提出论点，不要先把人物关系铺太满。读者会在第二屏之前决定要不要继续看。"
+          },
+          {
+            id: "m5",
+            role: "reviewer",
+            author: "Lin",
+            badge: "ENFP",
+            time: "15:14",
+            avatar: "ENFP",
+            copy: "第二个引子比第一条更有小红书点击感。它不是在解释电影，而是在立刻提供一种“我好像也懂这种情绪”的入口。"
+          },
+          {
+            id: "m6",
+            role: "moderator",
+            author: "主持人",
+            badge: "汇总",
+            time: "15:18",
+            avatar: "MOD",
+            copy: "这一轮建议保留 v4 的标题方向，但把首段再减 15%。优先动作：1) 提前亮出“空间泄密”论点；2) 结尾少解释一句；3) 引子保留情绪力度。"
+          }
+        ]
+      },
+      {
+        id: "legend-1900",
+        title: "《海上钢琴师》路线确认",
+        stageLabel: "选题确认中",
+        stageStatus: "neutral",
+        stageIndex: 1,
+        primaryAction: "生成初稿",
+        updatedAt: "今天 13:45",
+        filter: "all",
+        summary: "希望从“天赋为何拒绝进入现实秩序”切入，先确认哪条路线更适合小红书用户阅读。",
+        tags: ["工作台 / 对话页", "路线讨论", "待生成初稿"],
+        overview: "调研已完成，正在两条主题路线之间做取舍。",
+        rounds: { text: 0, image: 0 },
+        currentVersionId: "v1",
+        reviewers: [
+          {
+            name: "青屿",
+            profile: "INFJ · 20s · 情绪映射",
+            tone: "倾向放大人物为什么拒绝世界，而不是人物多么天才。",
+            focus: "路线 A 的情绪牵引更强，但路线 B 更容易写成主题向。"
+          },
+          {
+            name: "顾年",
+            profile: "ISTP · 30s · 逻辑拆解",
+            tone: "会抓“上船不上岸”这个核心选择是否被解释清楚。",
+            focus: "建议先锁路线，再生成初稿，不然容易左右摇摆。"
+          }
+        ],
+        versions: [
+          {
+            id: "v1",
+            label: "路线 B",
+            status: "待确认",
+            title: "《海上钢琴师》最难复制的，不是天赋，是他对现实秩序的拒绝",
+            hooks: [
+              "很多人记住 1900 的传奇，但真正让他无法下船的，是他根本不愿进入那个被定义好的世界。",
+              "这不是一个关于天才的故事，而是一个关于边界选择的故事。"
+            ],
+            excerpt: "这条路线更适合做主题向笔记，但还没有进入多人评审。",
+            tags: ["#海上钢琴师", "#电影主题笔记"]
+          }
+        ],
+        assets: [
+          {
+            type: "封面海报",
+            status: "未开始",
+            note: "等待文案方向锁定后再生成。",
+            placeholder: "等待文案定稿"
+          }
+        ],
+        audit: [
+          { stage: "调研完成", time: "13:20", detail: "主流观点摘要已写入会话。" },
+          { stage: "生成两条路线", time: "13:31", detail: "路线 A 偏情绪人物，路线 B 偏主题秩序。" }
+        ],
+        messages: [
+          {
+            id: "m1",
+            role: "system",
+            author: "系统",
+            badge: "选题",
+            time: "13:20",
+            avatar: "SYS",
+            copy: "调研已完成，当前提供两条路线供选择。"
+          },
+          {
+            id: "m2",
+            role: "writer",
+            author: "写作助手",
+            badge: "路线",
+            time: "13:31",
+            avatar: "WRT",
+            copy: "路线 A 更贴近人物孤独，路线 B 更容易展开“为什么不上岸”的主题讨论。建议先确认路线 B。"
+          }
+        ]
+      },
+      {
+        id: "brighter-summer",
+        title: "《牯岭街少年杀人事件》配图评审",
+        stageLabel: "配图审稿中",
+        stageStatus: "danger",
+        stageIndex: 4,
+        primaryAction: "继续配图",
+        updatedAt: "昨天 22:08",
+        filter: "image",
+        summary: "文案已定稿，当前在评审室对 3 张视觉产物做最后一轮筛选与微调。",
+        tags: ["多人评审聊天室", "产物视图", "配图阶段"],
+        overview: "文案已完成，侧栏主要用于看图、收意见和回放修改记录。",
+        rounds: { text: 4, image: 2 },
+        currentVersionId: "v6",
+        reviewers: [
+          {
+            name: "阿席",
+            profile: "ENTP · 20s · 视觉挑错",
+            tone: "会先看图有没有真正承接文案，不接受漂亮但无关。",
+            focus: "封面的冷感已经对了，但引句卡的字重略重，压过了情绪。"
+          }
+        ],
+        versions: [
+          {
+            id: "v6",
+            label: "v6",
+            status: "已定稿",
+            title: "《牯岭街少年杀人事件》真正可怕的，不是那一刀，而是所有人都在更早以前失去了彼此",
+            hooks: [
+              "它写的不是某个少年的失控，而是一整个时代如何慢慢把少年推向失控。",
+              "你会发现那一刀只是结果，真正的裂缝早就在更前面开始了。"
+            ],
+            excerpt: "文案已锁，当前只调图。",
+            tags: ["#牯岭街少年杀人事件", "#电影主题笔记", "#时代裂缝"]
+          }
+        ],
+        assets: [
+          {
+            type: "封面海报",
+            status: "第 2 轮",
+            note: "已保留低饱和街灯方案，等待字重微调。",
+            placeholder: "封面方案 A\n暗巷街灯 / 少年背影 / 低对比冷调"
+          },
+          {
+            type: "金句卡",
+            status: "第 2 轮",
+            note: "引句已经正确，等待留白比例调整。",
+            placeholder: "金句卡方案 B\n大句子 / 小标题 / 更轻字重"
+          },
+          {
+            type: "氛围图",
+            status: "通过",
+            note: "已确认可导出。",
+            placeholder: "氛围图\n操场夜色 / 风声感 / 模糊人影"
+          }
+        ],
+        audit: [
+          { stage: "图 1 重生成", time: "21:42", detail: "封面改为更低饱和、更像夜间街灯。" },
+          { stage: "主持人汇总", time: "21:56", detail: "保留封面 A，金句卡再减字重。" }
+        ],
+        messages: [
+          {
+            id: "m1",
+            role: "system",
+            author: "系统",
+            badge: "配图",
+            time: "21:40",
+            avatar: "SYS",
+            copy: "已进入第 2 轮配图评审。当前共 3 张图，其中 1 张已通过。"
+          },
+          {
+            id: "m2",
+            role: "reviewer",
+            author: "阿席",
+            badge: "ENTP",
+            time: "21:54",
+            avatar: "ENTP",
+            copy: "图面情绪已经对了，问题主要在文字层。封面标题可以再轻一点，别让它看起来像传统影评海报。"
+          }
+        ]
+      }
+    ];
+
+    const state = {
+      filter: "all",
+      activeSessionId: localStorage.getItem("rednote-active-session") || sessions[0].id,
+      activeTab: localStorage.getItem("rednote-active-tab") || "review",
+      selectedVersionId: localStorage.getItem("rednote-selected-version") || sessions[0].currentVersionId
+    };
+
+    const sessionListEl = document.getElementById("sessionList");
+    const stageTagsEl = document.getElementById("stageTags");
+    const sessionTitleEl = document.getElementById("sessionTitle");
+    const sessionSummaryEl = document.getElementById("sessionSummary");
+    const stageProgressEl = document.getElementById("stageProgress");
+    const draftSnapshotEl = document.getElementById("draftSnapshot");
+    const chatStreamEl = document.getElementById("chatStream");
+    const sidePanelEl = document.getElementById("sidePanel");
+    const tabNavEl = document.getElementById("tabNav");
+    const promptInputEl = document.getElementById("promptInput");
+    const composerFormEl = document.getElementById("composerForm");
+    const primaryActionEl = document.getElementById("primaryAction");
+    const filterRowEl = document.getElementById("filterRow");
+    const toastEl = document.getElementById("toast");
+    const scrimEl = document.getElementById("scrim");
+
+    let toastTimer = null;
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function getActiveSession() {
+      return sessions.find((session) => session.id === state.activeSessionId) || sessions[0];
+    }
+
+    function getStatusClass(status) {
+      if (status === "success") return "is-success";
+      if (status === "warn") return "is-warn";
+      if (status === "danger") return "is-danger";
+      if (status === "neutral") return "is-neutral";
+      return "is-muted";
+    }
+
+    function renderFilters() {
+      filterRowEl.querySelectorAll("[data-filter]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.filter === state.filter));
+      });
+    }
+
+    function renderSessionList() {
+      const filtered = sessions.filter((session) => {
+        if (state.filter === "all") return true;
+        if (state.filter === "text") return session.stageIndex === 3;
+        if (state.filter === "image") return session.stageIndex === 4;
+        if (state.filter === "done") return session.stageLabel === "已完成";
+        return true;
+      });
+
+      sessionListEl.innerHTML = filtered
+        .map((session) => {
+          const isActive = session.id === state.activeSessionId;
+          return `
+            <button class="thread-card ${isActive ? "is-active" : ""}" type="button" data-session-id="${session.id}">
+              <div class="thread-card-top">
+                <div>
+                  <div class="thread-card-title">${escapeHtml(session.title)}</div>
+                  <div class="thread-card-subtitle">${escapeHtml(session.updatedAt)}</div>
+                </div>
+                <span class="status-pill ${getStatusClass(session.stageStatus)}">
+                  <span class="status-dot"></span>${escapeHtml(session.stageLabel)}
+                </span>
+              </div>
+              <p class="thread-card-snippet">${escapeHtml(session.overview)}</p>
+              <div class="thread-card-bottom">
+                <div class="tag-row">
+                  ${session.tags.slice(0, 2).map((tag) => `<span class="role-chip">${escapeHtml(tag)}</span>`).join("")}
+                </div>
+                <span class="small-copy">第 <span class="num">${session.rounds.text}</span> 轮文案</span>
+              </div>
+            </button>
+          `;
+        })
+        .join("");
+    }
+
+    function renderStageHeader(session) {
+      stageTagsEl.innerHTML = `
+        <span class="status-pill ${getStatusClass(session.stageStatus)}"><span class="status-dot"></span>${escapeHtml(session.stageLabel)}</span>
+        <span class="role-chip">当前路线：${escapeHtml(session.tags[2] || session.tags[0])}</span>
+        <span class="role-chip">文案轮次 <span class="num">${session.rounds.text}</span>/5</span>
+      `;
+      sessionTitleEl.textContent = session.title;
+      sessionSummaryEl.textContent = session.summary;
+      primaryActionEl.textContent = session.primaryAction;
+    }
+
+    function renderProgress(session) {
+      stageProgressEl.innerHTML = stageOrder
+        .map((stage, index) => {
+          let className = "";
+          if (index < session.stageIndex) className = "is-done";
+          if (index === session.stageIndex) className = "is-current";
+          const meta = index === 3
+            ? `第 ${session.rounds.text} 轮 / 最高 5 轮`
+            : index === 4
+              ? `第 ${session.rounds.image} 轮`
+              : stage.hint;
+          return `
+            <div class="stage-step ${className}">
+              <div class="stage-step-top">
+                <span>${String(index + 1).padStart(2, "0")}</span>
+                <span>${index < session.stageIndex ? "已完成" : index === session.stageIndex ? "进行中" : "待开始"}</span>
+              </div>
+              <strong>${stage.label}</strong>
+              <small>${escapeHtml(meta)}</small>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    function renderSnapshot(session) {
+      const version = session.versions.find((item) => item.id === state.selectedVersionId) || session.versions[0];
+      draftSnapshotEl.innerHTML = `
+        <div class="snapshot-top">
+          <div>
+            <div class="small-copy">当前展示</div>
+            <strong class="snapshot-title">${escapeHtml(version.title)}</strong>
+          </div>
+          <div class="tag-row">
+            <span class="role-chip">${escapeHtml(version.label)}</span>
+            <span class="role-chip">${escapeHtml(version.status)}</span>
+            <button class="btn btn-secondary btn-small" type="button" data-action="copy-title">复制标题</button>
+          </div>
+        </div>
+        <div class="snapshot-body">
+          <div class="snapshot-card">
+            <div class="small-copy">当前引子</div>
+            <ul class="hook-list">
+              ${version.hooks.map((hook) => `<li>${escapeHtml(hook)}</li>`).join("")}
+            </ul>
+          </div>
+          <div class="snapshot-card">
+            <div class="small-copy">正文摘要</div>
+            <p class="draft-excerpt">${escapeHtml(version.excerpt)}</p>
+            <div class="tag-row">
+              ${version.tags.map((tag) => `<span class="role-chip">${escapeHtml(tag)}</span>`).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMessages(session) {
+      chatStreamEl.innerHTML = session.messages
+        .map((message) => {
+          const variantClass = `is-${message.role === "moderator" ? "system" : message.role}`;
+          return `
+            <article class="message">
+              <div class="message-avatar">${escapeHtml(message.avatar)}</div>
+              <div class="message-card ${variantClass}">
+                <div class="message-head">
+                  <div class="message-author">
+                    <span>${escapeHtml(message.author)}</span>
+                    <span class="role-chip">${escapeHtml(message.badge)}</span>
+                  </div>
+                  <span class="small-copy num">${escapeHtml(message.time)}</span>
+                </div>
+                <p class="message-copy">${escapeHtml(message.copy)}</p>
+                ${message.attachment ? `
+                  <div class="message-attachment">
+                    <strong class="attachment-title">${escapeHtml(message.attachment.title)}</strong>
+                    <div class="attachment-grid">
+                      ${message.attachment.cells.map((cell) => `
+                        <div class="attachment-cell">
+                          <span class="small-copy">${escapeHtml(cell.label)}</span>
+                          <strong>${escapeHtml(cell.value)}</strong>
+                        </div>
+                      `).join("")}
+                    </div>
+                  </div>
+                ` : ""}
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    function renderReviewTab(session) {
+      return `
+        <section class="inspector-card">
+          <h3>当前评审团</h3>
+          <p class="caption">这组人格会按网感、结构和情绪三个维度给出意见，避免只得到同一种审稿声音。</p>
+        </section>
+        <div class="reviewer-grid">
+          ${session.reviewers.map((reviewer) => `
+            <article class="reviewer-row">
+              <div class="reviewer-top">
+                <div class="reviewer-id">
+                  <strong>${escapeHtml(reviewer.name)}</strong>
+                  <span>${escapeHtml(reviewer.profile)}</span>
+                </div>
+                <span class="role-chip">活跃</span>
+              </div>
+              <p class="caption">${escapeHtml(reviewer.tone)}</p>
+              <p class="reviewer-note">${escapeHtml(reviewer.focus)}</p>
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderProgressTab(session) {
+      return `
+        <section class="inspector-card">
+          <h3>当前进度</h3>
+          <ul class="progress-list">
+            ${stageOrder.map((stage, index) => `
+              <li class="progress-row">
+                <div class="progress-title">
+                  <span>${escapeHtml(stage.label)}</span>
+                  <span class="status-pill ${index < session.stageIndex ? "is-success" : index === session.stageIndex ? getStatusClass(session.stageStatus) : "is-muted"}">
+                    <span class="status-dot"></span>
+                    ${index < session.stageIndex ? "完成" : index === session.stageIndex ? "进行中" : "待开始"}
+                  </span>
+                </div>
+                <p class="progress-copy">${escapeHtml(index === 3 ? `文案评审进行到第 ${session.rounds.text} 轮。` : index === 4 ? `配图审稿轮次：${session.rounds.image}。` : stage.hint)}</p>
+              </li>
+            `).join("")}
+          </ul>
+        </section>
+        <section class="inspector-card">
+          <h3>审计记录</h3>
+          <ul class="audit-list">
+            ${session.audit.map((item) => `
+              <li class="audit-row">
+                <div class="audit-head">
+                  <span>${escapeHtml(item.stage)}</span>
+                  <span class="num">${escapeHtml(item.time)}</span>
+                </div>
+                <p class="audit-copy">${escapeHtml(item.detail)}</p>
+              </li>
+            `).join("")}
+          </ul>
+        </section>
+      `;
+    }
+
+    function renderVersionsTab(session) {
+      const version = session.versions.find((item) => item.id === state.selectedVersionId) || session.versions[0];
+      return `
+        <section class="inspector-card">
+          <h3>历史记录</h3>
+          <p class="caption">每一版标题、引子和摘要都会被完整保存，可以随时回看、对比与回滚。</p>
+        </section>
+        <div class="version-list">
+          ${session.versions.map((item) => `
+            <button class="version-row" type="button" data-version-id="${item.id}" aria-current="${String(item.id === version.id)}">
+              <div class="version-row-top">
+                <div>
+                  <div class="version-title">${escapeHtml(item.label)} · ${escapeHtml(item.status)}</div>
+                  <div class="small-copy">${escapeHtml(item.title)}</div>
+                </div>
+                <span class="role-chip">${escapeHtml(item.tags[0] || "稿件")}</span>
+              </div>
+              <p class="version-excerpt">${escapeHtml(item.excerpt)}</p>
+            </button>
+          `).join("")}
+        </div>
+        <section class="inspector-card">
+          <h3>当前选中版本</h3>
+          <ul class="bullet-list">
+            ${version.hooks.map((hook) => `<li>${escapeHtml(hook)}</li>`).join("")}
+          </ul>
+        </section>
+      `;
+    }
+
+    function renderAssetsTab(session) {
+      return `
+        <section class="inspector-card">
+          <h3>产物与配图</h3>
+          <p class="caption">这里固定展示封面、金句卡与氛围图，避免创作完成后再切去另一套界面找产物。</p>
+        </section>
+        <div class="asset-grid">
+          ${session.assets.map((asset) => `
+            <article class="reviewer-row">
+              <div class="asset-head">
+                <div class="reviewer-id">
+                  <strong>${escapeHtml(asset.type)}</strong>
+                  <span>${escapeHtml(asset.status)}</span>
+                </div>
+                <button class="btn btn-secondary btn-small" type="button" data-action="open-tab" data-tab="progress">看流程</button>
+              </div>
+              <div class="artifact-shot">${escapeHtml(asset.placeholder)}</div>
+              <p class="reviewer-note">${escapeHtml(asset.note)}</p>
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderSidePanel(session) {
+      tabNavEl.querySelectorAll("[data-tab]").forEach((button) => {
+        button.setAttribute("aria-selected", String(button.dataset.tab === state.activeTab));
+      });
+
+      if (state.activeTab === "progress") {
+        sidePanelEl.innerHTML = renderProgressTab(session);
+        return;
+      }
+      if (state.activeTab === "versions") {
+        sidePanelEl.innerHTML = renderVersionsTab(session);
+        return;
+      }
+      if (state.activeTab === "assets") {
+        sidePanelEl.innerHTML = renderAssetsTab(session);
+        return;
+      }
+      sidePanelEl.innerHTML = renderReviewTab(session);
+    }
+
+    function render() {
+      const session = getActiveSession();
+      if (!session.versions.some((item) => item.id === state.selectedVersionId)) {
+        state.selectedVersionId = session.currentVersionId;
+      }
+      renderFilters();
+      renderSessionList();
+      renderStageHeader(session);
+      renderProgress(session);
+      renderSnapshot(session);
+      renderMessages(session);
+      renderSidePanel(session);
+      localStorage.setItem("rednote-active-session", session.id);
+      localStorage.setItem("rednote-active-tab", state.activeTab);
+      localStorage.setItem("rednote-selected-version", state.selectedVersionId);
+    }
+
+    function openRightPanel(tab) {
+      state.activeTab = tab;
+      document.body.dataset.leftOpen = "false";
+      if (window.matchMedia("(max-width: 1080px)").matches) {
+        document.body.dataset.rightOpen = "true";
+      }
+      render();
+    }
+
+    function closeDrawers() {
+      document.body.dataset.leftOpen = "false";
+      document.body.dataset.rightOpen = "false";
+    }
+
+    function showToast(message) {
+      toastEl.textContent = message;
+      toastEl.classList.add("is-visible");
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => {
+        toastEl.classList.remove("is-visible");
+      }, 2200);
+    }
+
+    function appendMessage(session, message) {
+      session.messages.push(message);
+      session.updatedAt = "刚刚";
+      render();
+      requestAnimationFrame(() => {
+        chatStreamEl.scrollTo({ top: chatStreamEl.scrollHeight, behavior: "smooth" });
+      });
+    }
+
+    function runPrimaryAction() {
+      const session = getActiveSession();
+      if (session.stageIndex === 3) {
+        session.rounds.text = Math.min(session.rounds.text + 1, 5);
+        session.audit.unshift({
+          stage: `第 ${session.rounds.text} 轮评审开始`,
+          time: "刚刚",
+          detail: "已从主界面直接续接评审，不用离开当前会话。"
+        });
+        appendMessage(session, {
+          id: `auto-${Date.now()}`,
+          role: "system",
+          author: "系统",
+          badge: "轮次",
+          time: "刚刚",
+          avatar: "SYS",
+          copy: `已发起第 ${session.rounds.text} 轮文案评审，右侧会持续同步新的意见摘要。`
+        });
+        openRightPanel("progress");
+        showToast("已续接新一轮文案评审");
+        return;
+      }
+
+      if (session.stageIndex === 4) {
+        session.rounds.image += 1;
+        session.audit.unshift({
+          stage: `第 ${session.rounds.image} 轮配图评审开始`,
+          time: "刚刚",
+          detail: "新一轮配图审稿已加入时间线。"
+        });
+        openRightPanel("assets");
+        showToast("已发起新一轮配图评审");
+        render();
+        return;
+      }
+
+      showToast("已创建下一步任务，等待生成结果。");
+    }
+
+    function queueWriterRevision(session, prompt) {
+      const lowerPrompt = prompt.toLowerCase();
+      const currentVersion = session.versions[0];
+      let nextTitle = currentVersion.title;
+      let nextHooks = [...currentVersion.hooks];
+      let nextExcerpt = currentVersion.excerpt;
+      let reply = "已记录这条改稿指令，我会把它写进下一版，并同步给评审团继续看。";
+
+      if (lowerPrompt.includes("标题")) {
+        if (session.id === "mood-for-love") {
+          nextTitle = "为什么《花样年华》最让人难受的，不是错过，而是每一次都没来得及把话说完";
+          nextHooks = [
+            "它最痛的地方，从来不是爱而不得，而是每一次都差一点点就能说出口。",
+            "这部电影把“想靠近又不敢靠近”的气压，拍成了一整条走不出去的走廊。"
+          ];
+          nextExcerpt = "新版把论点更早抛出：先讲空间如何泄密，再把人物关系放回来承接情绪。";
+        } else if (session.id === "legend-1900") {
+          nextTitle = "《海上钢琴师》真正让人舍不得的，不是天才，而是他从头到尾都拒绝被世界定义";
+          nextHooks = [
+            "1900 留在船上，不只是因为害怕上岸，而是因为他根本不愿进入那个被编号的人生。",
+            "这不是传奇滤镜，而是一种对现实秩序的彻底拒绝。"
+          ];
+          nextExcerpt = "这一版把“拒绝被世界定义”提到标题前景，减少人物传奇的叙述比例。";
+        } else {
+          nextTitle = "《牯岭街少年杀人事件》最让人后劲发作的，不是结局，而是所有裂缝都早就写在前面";
+          nextHooks = [
+            "真正让人不安的不是那一刻的失控，而是整个时代一点点把少年推到边缘。",
+            "你看到的不是孤立事件，而是一整套失去彼此的过程。"
+          ];
+          nextExcerpt = "标题被收得更集中，强调“裂缝早已存在”的主题，方便后续和配图统一气质。";
+        }
+        reply = "标题方向已收得更像可点击的深度笔记，保留高级感，但把第一击的情绪强度再往前提了一格。";
+      } else if (lowerPrompt.includes("配图")) {
+        state.activeTab = "assets";
+        reply = session.id === "brighter-summer"
+          ? "已经把这一轮配图重点收敛到字重、留白和图文关系上，右侧产物区会直接显示三张图的当前状态。"
+          : "已经整理成三张配图方向：封面负责建立气压，金句卡负责二次传播，氛围图负责延长停留。";
+      } else if (lowerPrompt.includes("评审")) {
+        state.activeTab = "review";
+        reply = session.id === "legend-1900"
+          ? "已把路线确认稿送入评审团，优先听他们对“不上岸”的主题切口是否成立。"
+          : "已把这一版继续送入评审团，优先收集对标题、引子和结尾留白的意见。";
+      }
+
+      window.setTimeout(() => {
+        const newVersionIndex = session.versions.length + 1;
+        const newVersionId = `v${newVersionIndex + 1}`;
+        const newest = {
+          id: newVersionId,
+          label: `v${newVersionIndex + 1}`,
+          status: "新生成",
+          title: nextTitle,
+          hooks: nextHooks,
+          excerpt: nextExcerpt,
+          tags: currentVersion.tags
+        };
+        session.versions.unshift(newest);
+        session.currentVersionId = newVersionId;
+        state.selectedVersionId = newVersionId;
+        session.audit.unshift({
+          stage: `${newest.label} 已写入`,
+          time: "刚刚",
+          detail: reply
+        });
+        appendMessage(session, {
+          id: `writer-${Date.now()}`,
+          role: "writer",
+          author: "写作助手",
+          badge: "回写",
+          time: "刚刚",
+          avatar: "WRT",
+          copy: reply,
+          attachment: {
+            title: `${newest.label} 当前变化`,
+            cells: [
+              { label: "标题", value: newest.title },
+              { label: "重点", value: lowerPrompt.includes("配图") ? "已切换到配图侧栏" : "标题与引子已同步更新" }
+            ]
+          }
+        });
+      }, 700);
+    }
+
+    filterRowEl.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-filter]");
+      if (!button) return;
+      state.filter = button.dataset.filter;
+      render();
+    });
+
+    sessionListEl.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-session-id]");
+      if (!button) return;
+      state.activeSessionId = button.dataset.sessionId;
+      state.selectedVersionId = getActiveSession().currentVersionId;
+      closeDrawers();
+      render();
+    });
+
+    document.addEventListener("click", (event) => {
+      const actionTrigger = event.target.closest("[data-action]");
+        if (actionTrigger) {
+        const action = actionTrigger.dataset.action;
+        if (action === "toggle-left") {
+          const willOpen = document.body.dataset.leftOpen !== "true";
+          document.body.dataset.leftOpen = willOpen ? "true" : "false";
+          document.body.dataset.rightOpen = "false";
+        }
+        if (action === "toggle-right") {
+          const willOpen = document.body.dataset.rightOpen !== "true";
+          document.body.dataset.rightOpen = willOpen ? "true" : "false";
+          document.body.dataset.leftOpen = "false";
+        }
+        if (action === "new-session") {
+          showToast("这里会打开新会话创建流程。");
+        }
+        if (action === "copy-title") {
+          const session = getActiveSession();
+          const version = session.versions.find((item) => item.id === state.selectedVersionId) || session.versions[0];
+          navigator.clipboard?.writeText(version.title);
+          showToast("标题已复制");
+        }
+        if (action === "open-tab") {
+          openRightPanel(actionTrigger.dataset.tab);
+        }
+      }
+
+      const tabTrigger = event.target.closest("[data-tab]");
+      if (tabTrigger && tabTrigger.parentElement === tabNavEl) {
+        state.activeTab = tabTrigger.dataset.tab;
+        render();
+      }
+
+      const versionTrigger = event.target.closest("[data-version-id]");
+      if (versionTrigger) {
+        state.selectedVersionId = versionTrigger.dataset.versionId;
+        render();
+      }
+
+      const promptTrigger = event.target.closest("[data-prompt]");
+      if (promptTrigger) {
+        promptInputEl.value = promptTrigger.dataset.prompt;
+        promptInputEl.focus();
+      }
+    });
+
+    composerFormEl.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const prompt = promptInputEl.value.trim();
+      if (!prompt) return;
+      const session = getActiveSession();
+      appendMessage(session, {
+        id: `user-${Date.now()}`,
+        role: "user",
+        author: "你",
+        badge: "指令",
+        time: "刚刚",
+        avatar: "YOU",
+        copy: prompt
+      });
+      promptInputEl.value = "";
+      queueWriterRevision(session, prompt);
+    });
+
+    primaryActionEl.addEventListener("click", () => {
+      runPrimaryAction();
+    });
+
+    scrimEl.addEventListener("click", () => {
+      closeDrawers();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeDrawers();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Railway reference config for the backend API service.
+# Create three Railway services manually:
+#   1. MySQL (Railway plugin) → copy MYSQL_URL / DATABASE_URL
+#   2. Backend — point root to /backend, use Dockerfile
+#   3. Frontend — point root to /frontend, use Dockerfile
+#
+# Set backend variables: DATABASE_URL, OPENAI_API_KEY, TMDB_API_KEY, CORS_ORIGINS
+# Set frontend build arg / env: NEXT_PUBLIC_API_URL=<backend public URL>
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+watchPatterns = ["backend/**"]
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
