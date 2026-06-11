@@ -518,3 +518,18 @@
 - **人工干预**: 用户通过 Brainstorming 式问答确认 REFLECTION 核心观点（电影兴趣、网页 AI 痛点、Brainstorming/TDD/Open Design 体感）
 - **教训**: C1 重点是「过程证据齐全 + 覆盖表可审计」；实现已完成，交付前务必补 git 历史与可选云 URL
 
+---
+
+## 2026-06-12 — Git 仓库初始化与演示视频入库
+
+- **技能**: `finishing-a-development-branch`
+- **Task**: C1 交付 / GitHub 提交准备
+- **Subagent 输出**:
+  - `git init` + Git LFS 跟踪 `*.mp4`
+  - 演示视频移至 `docs/demo/演示视频提交.mp4`（约 130MB，LFS）
+  - 修复 `test_full_flow` mock（`model=` 参数）+ 行数测试上限；`pytest 60 passed`
+  - 分批 commit：`c12368b` docs → `ffbe787` 源码 → `de48f2d` README/CI/演示视频
+  - 分支 `main`；remote 预设 `github.com/wangdaoheng/AI4SE_Final_Project`
+- **人工干预**: 需在 GitHub 网页创建同名公开仓库后执行 `git push -u origin main`
+- **教训**: 超过 100MB 的视频必须用 Git LFS；`.env` 与 `*.db` 不可提交
+
