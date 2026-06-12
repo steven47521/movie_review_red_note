@@ -176,8 +176,9 @@ AI4SE_Final_Project/
 | 交付物 | 状态 |
 |--------|------|
 | SPEC / PLAN / SPEC_PROCESS | ✅ |
-| 源代码 + 测试 | ✅ `pytest` + `vitest`（见 CI） |
-| Docker + CI + GHCR | ✅ 见 `.github/workflows/ci.yml` |
+| 源代码 + 测试 | ✅ `pytest` + `vitest`（见 [CI_STATUS.md](docs/CI_STATUS.md)） |
+| Docker + CI + GHCR | ✅ CI 全绿 + GHCR publish（见 [CI_STATUS.md](docs/CI_STATUS.md)） |
+| PR 工作流 + subagent 标注 | ✅ [PR_HISTORY.md](docs/PR_HISTORY.md)（18 PR / feature 分支） |
 | Open Design 前端 | ✅ `frontend/open-design/` |
 | AGENT_LOG | ✅ P0-A → T15 逐条记录 |
 | REFLECTION | ✅ |

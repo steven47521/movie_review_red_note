@@ -2,7 +2,7 @@
 
 > 项目：**片语 RedNote**（经典电影小红书创作助手）  
 > 主开发 Agent：**Cursor Agent + Superpowers**  
-> 文档范围：brainstorming → SPEC.md → PLAN.md（**不含 P0-B 冷启动**，该节待补充）
+> 文档范围：brainstorming → SPEC.md → PLAN.md → **P0-B 冷启动**（§7 Round 1+2 已完成）
 
 ---
 
@@ -16,7 +16,7 @@
 | SPEC 定稿 | 2026-06-12 | `brainstorming` | [`SPEC.md`](SPEC.md) |
 | SPEC 修订 | 2026-06-12 | `brainstorming` | MySQL、gpt-image-2、配图审稿 |
 | PLAN 定稿 | 2026-06-12 | `writing-plans` | [`PLAN.md`](PLAN.md) |
-| 冷启动验证 | 待定 | — | **P0-B，待第二 Agent 执行** |
+| 冷启动验证 | 2026-06-12 | Codex R1 + Claude Code R2 | **P0-B 完成**（§7） |
 
 ---
 

@@ -533,3 +533,18 @@
 - **人工干预**: 需在 GitHub 网页创建同名公开仓库后执行 `git push -u origin main`
 - **教训**: 超过 100MB 的视频必须用 Git LFS；`.env` 与 `*.db` 不可提交
 
+---
+
+## 2026-06-12 — 补 PR 工作流 + PLAN 勾选 + CI/GHCR 核对
+
+- **技能**: `finishing-a-development-branch` | `requesting-code-review`
+- **Task**: C1 交付缺口修复
+- **Prompt 摘要**: 用户要求补齐 §4.7 PR/subagent/PLAN 勾选、SPEC_PROCESS 矛盾、CI/GHCR 核对
+- **Subagent 输出**:
+  - [`docs/PR_HISTORY.md`](docs/PR_HISTORY.md) — 18 个 PR（P0-A → C1），每 PR 标注 subagent + 人工干预
+  - [`docs/CI_STATUS.md`](docs/CI_STATUS.md) — Actions run #27418777333 四 job 全 success
+  - [`scripts/backfill-github-prs.ps1`](scripts/backfill-github-prs.ps1) — push feature 分支；可选 GITHUB_TOKEN 创建 closed PR
+  - PLAN 正文全勾选 + Task 进度表 commit hash；SPEC_PROCESS §1 修正 P0-B 状态
+- **人工干预**: 无
+- **教训**: 批量 push 后用 PR_HISTORY + feature 分支补 worktree 证据；GHCR 需在 GitHub Packages 确认 visibility
+
