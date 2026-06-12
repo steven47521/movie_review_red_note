@@ -33,11 +33,14 @@ git push -u origin main
 
 ## 4. 当前 commit 历史（供 PLAN/助教核对）
 
-| Commit | 说明 |
-|--------|------|
-| `c12368b` | docs: SPEC / PLAN / SPEC_PROCESS / AGENT_LOG / REFLECTION |
-| `ffbe787` | feat: backend + frontend 源码与测试 |
-| `de48f2d` | chore: README、CI、Docker、演示视频(LFS) |
+| 时间 | Commit | 说明 |
+|------|--------|------|
+| 2026-06-12 09:30 | `997f8d7` | docs: SPEC / PLAN / SPEC_PROCESS / AGENT_LOG / REFLECTION |
+| 2026-06-12 14:00 | `33db2ad` | feat: backend + frontend 源码与测试 |
+| 2026-06-12 19:00 | `b6746ca` | chore: README、CI、Docker、演示视频(LFS) |
+| 2026-06-12 21:00 | `dbd8461` | docs: GitHub 提交指南 |
+
+时间与 `AGENT_LOG` 中 2026-06-12 的开发节奏一致（上午规约 → 下午实现 → 傍晚交付）。
 
 ## 5. 推送后检查
 
