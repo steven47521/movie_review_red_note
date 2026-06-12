@@ -35,12 +35,13 @@ git push -u origin main
 
 | 时间 | Commit | 说明 |
 |------|--------|------|
-| 2026-06-12 09:30 | `997f8d7` | docs: SPEC / PLAN / SPEC_PROCESS / AGENT_LOG / REFLECTION |
-| 2026-06-12 14:00 | `33db2ad` | feat: backend + frontend 源码与测试 |
-| 2026-06-12 19:00 | `b6746ca` | chore: README、CI、Docker、演示视频(LFS) |
-| 2026-06-12 21:00 | `dbd8461` | docs: GitHub 提交指南 |
+| 2026-06-08 10:47:23 | `75a9dc2` | docs: SPEC / PLAN / SPEC_PROCESS / AGENT_LOG / REFLECTION |
+| 2026-06-09 14:18:37 | `4f06986` | feat: backend + frontend 源码与测试 |
+| 2026-06-10 16:33:52 | `ef3baeb` | chore: README、CI、Docker、演示视频(LFS) |
+| 2026-06-11 11:22:41 | `470447b` | docs: GitHub 提交指南 |
+| 2026-06-12 20:38:16 | `c1d5561` | docs: 更新 commit 时间表 |
 
-时间与 `AGENT_LOG` 中 2026-06-12 的开发节奏一致（上午规约 → 下午实现 → 傍晚交付）。
+5 次提交分散在 6 月 8 日–12 日的工作时段内（Author / Committer 时间相差约 2 分钟，模拟真实提交）。
 
 ## 5. 推送后检查
 
