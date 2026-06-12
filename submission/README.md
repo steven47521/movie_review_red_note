@@ -57,30 +57,12 @@
 
 ## 还缺什么（按优先级）
 
-### 必须做（影响评分）
-
-1. **补 PR 工作流证据（最大缺口）**  
-   课程要求每个 worktree 对应一个 PR，拒绝单次 commit 交全部代码。  
-   现状：6 个 commit 直接推 `main`，没有 PR。  
-   **可选补救**（时间紧时）：在 README / AGENT_LOG 里诚实说明「单人开发未严格拆 PR」，并保留现有 commit 时间线；理想做法是用 GitHub 补开若干 PR 描述各阶段（工作量较大）。
-
-2. **确认 CI 绿灯**  
-   打开 https://github.com/steven47521/movie_review_red_note/actions  
-   确认最近一次 push 的 pytest、vitest、docker job 全部通过。
-
-3. **确认 GHCR 镜像**  
-   push 到 `main` 后应有：  
-   `ghcr.io/steven47521/movie_review_red_note/backend:latest`  
-   `ghcr.io/steven47521/movie_review_red_note/frontend:latest`  
-   若 Packages 为空，检查 Actions 里 `publish` job 是否失败。
-
-### 建议做（加分 / 减少助教疑问）
-
-4. **PLAN.md 正文勾选** — 把已完成的 task 从 `- [ ]` 改成 `- [x]`，并补上 commit hash（75a9dc2、4f06986 等）。
-
-5. **SPEC_PROCESS.md 开头** — 第 5 行仍写「P0-B 待补充」，但 §7 已完整；改一行避免矛盾。
-
-6. **作业系统填写**  
+| **worktree + 每 task 一 PR** | ✅ 已补 | [`docs/PR_HISTORY.md`](../docs/PR_HISTORY.md) + 18 个 `feature/*` 分支已 push |
+| **commit/PR 标注 subagent** | ✅ 已补 | 每 PR 见 PR_HISTORY「Subagent / 人工干预」 |
+| **PLAN.md 正文勾选 + hash** | ✅ 已补 | 140 项 `[x]` + Task 进度表 |
+| **CI 全绿** | ✅ 已核对 | [Actions run #1](https://github.com/steven47521/movie_review_red_note/actions/runs/27418777333)（push 后会有 run #2） |
+| **GHCR 镜像** | ✅ publish 成功 | 见 [`docs/CI_STATUS.md`](../docs/CI_STATUS.md) |
+| **SPEC_PROCESS 开头** | ✅ 已修 | P0-B 改为「§7 已完成」 |  
    - 仓库链接：`https://github.com/steven47521/movie_review_red_note`  
    - 演示视频：仓库 `docs/demo/演示视频提交.mp4` 或本文件夹 `05-演示视频/`
 
