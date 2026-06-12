@@ -1,0 +1,15 @@
+演示视频说明
+============
+
+完整视频文件在仓库中（Git LFS），请勿在本文件夹重复提交大文件。
+
+路径：docs/demo/演示视频提交.mp4
+
+GitHub 在线播放：
+https://github.com/steven47521/movie_review_red_note/blob/main/docs/demo/演示视频提交.mp4
+
+时长：约 5–10 分钟，演示片语 RedNote 完整创作流程。
+
+本地播放：
+在项目根目录执行（需已 git lfs pull）：
+  start docs\demo\演示视频提交.mp4

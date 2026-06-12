@@ -548,16 +548,3 @@
 - **人工干预**: 无
 - **教训**: 批量 push 后用 PR_HISTORY + feature 分支补 worktree 证据；GHCR 需在 GitHub Packages 确认 visibility
 
----
-
-## 2026-06-12 — GitHub Closed PR 记录（18 条）
-
-- **技能**: `finishing-a-development-branch` | `requesting-code-review`
-- **Task**: C1 / §4.7 PR 工作流
-- **Subagent 输出**:
-  - `scripts/backfill-github-prs.ps1` 创建并关闭 PR #1–#17 + P0-A #18
-  - [`docs/PR_CREATED.json`](docs/PR_CREATED.json)、[`submission/06-部署与提交/PR列表.md`](submission/06-部署与提交/PR列表.md)
-  - `base/root`、`base/pre-impl` 等 base 分支 + 18 个 `feature/*` 分支
-- **人工干预**: 无
-- **教训**: P0-A 需 `feature/P0-spec-process-v2` cherry-pick 到 `base/root` 才能与 orphan base 建 PR
-

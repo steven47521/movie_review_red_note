@@ -1,0 +1,21 @@
+AI4SE 期末提交信息
+====================
+
+GitHub 仓库（主交付）：
+https://github.com/steven47521/movie_review_red_note
+
+Closed Pull Requests（18 条）：
+https://github.com/steven47521/movie_review_red_note/pulls?q=is%3Apr+is%3Aclosed
+
+PR 明细表：
+submission/06-部署与提交/PR列表.md
+
+演示视频（仓库内）：
+docs/demo/演示视频提交.mp4
+
+CI Actions：
+https://github.com/steven47521/movie_review_red_note/actions
+
+GHCR 镜像：
+ghcr.io/steven47521/movie_review_red_note/backend:latest
+ghcr.io/steven47521/movie_review_red_note/frontend:latest

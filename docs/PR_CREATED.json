@@ -1,0 +1,128 @@
+﻿[
+  {
+    "Task": "P0-A",
+    "Number": 18,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/18",
+    "Branch": "feature/P0-spec-process-v2",
+    "Title": "docs(P0-A): spec, plan, process log, reflection"
+  },
+  {
+    "Task": "P0-B",
+    "Number": 1,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/1",
+    "Branch": "feature/P0B-cold-start",
+    "Title": "feat(P0-B): cold-start validation archive"
+  },
+  {
+    "Task": "T1",
+    "Number": 2,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/2",
+    "Branch": "feature/T1-scaffold",
+    "Title": "feat(T1): project scaffold with health check"
+  },
+  {
+    "Task": "T2",
+    "Number": 3,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/3",
+    "Branch": "feature/T2-mysql-models",
+    "Title": "feat(T2): mysql models and alembic"
+  },
+  {
+    "Task": "T3",
+    "Number": 4,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/4",
+    "Branch": "feature/T3-personas",
+    "Title": "feat(T3): 80 personas and matcher"
+  },
+  {
+    "Task": "T4",
+    "Number": 5,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/5",
+    "Branch": "feature/T4-research",
+    "Title": "feat(T4): movie research service"
+  },
+  {
+    "Task": "T5",
+    "Number": 6,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/6",
+    "Branch": "feature/T5-ideation",
+    "Title": "feat(T5): ideation angles and routes"
+  },
+  {
+    "Task": "T6",
+    "Number": 7,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/7",
+    "Branch": "feature/T6-review-room-text",
+    "Title": "feat(T6): review room text phase + SSE"
+  },
+  {
+    "Task": "T7",
+    "Number": 8,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/8",
+    "Branch": "feature/T7-draft-edit",
+    "Title": "feat(T7): draft regenerate and de-ai polish"
+  },
+  {
+    "Task": "T8",
+    "Number": 9,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/9",
+    "Branch": "feature/T8-visual-review",
+    "Title": "feat(T8): gpt-image-2 visuals + image review"
+  },
+  {
+    "Task": "T9",
+    "Number": 10,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/10",
+    "Branch": "feature/T9-library",
+    "Title": "feat(T9): library timeline and publish flags"
+  },
+  {
+    "Task": "T10",
+    "Number": 11,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/11",
+    "Branch": "feature/T10-frontend-scaffold",
+    "Title": "feat(T10): nextjs dashboard + open design"
+  },
+  {
+    "Task": "T11",
+    "Number": 12,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/12",
+    "Branch": "feature/T11-review-room-ui",
+    "Title": "feat(T11): review room chat UI with SSE"
+  },
+  {
+    "Task": "T12",
+    "Number": 13,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/13",
+    "Branch": "feature/T12-frontend-flows",
+    "Title": "feat(T12): creation wizard + gallery"
+  },
+  {
+    "Task": "T13",
+    "Number": 14,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/14",
+    "Branch": "feature/T13-docker-ci",
+    "Title": "feat(T13): docker compose + CI + GHCR"
+  },
+  {
+    "Task": "T14",
+    "Number": 15,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/15",
+    "Branch": "feature/T14-deploy",
+    "Title": "feat(T14): deployment configs"
+  },
+  {
+    "Task": "T15",
+    "Number": 16,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/16",
+    "Branch": "feature/T15-integration",
+    "Title": "test(T15): integration tests + line count"
+  },
+  {
+    "Task": "C1",
+    "Number": 17,
+    "Url": "https://github.com/steven47521/movie_review_red_note/pull/17",
+    "Branch": "feature/C1-delivery",
+    "Title": "docs(C1): delivery checklist and PR backfill"
+  }
+]
