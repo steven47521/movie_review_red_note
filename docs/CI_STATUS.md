@@ -2,12 +2,12 @@
 
 > 核对时间：2026-06-12（自动拉取 GitHub Actions API）
 
-## 最近一次 CI（main @ `1b09848`）
+## 最近一次 CI（main @ `ec15213`）
 
 | 项 | 结果 |
 |----|------|
-| Workflow | [CI run #1](https://github.com/steven47521/movie_review_red_note/actions/runs/27418777333) |
-| 触发 | push to `main` |
+| Workflow | [CI run #6](https://github.com/steven47521/movie_review_red_note/actions/runs/27419338453) |
+| 触发 | push to `main`（PR backfill 文档） |
 | 总状态 | **success** ✅ |
 
 ### Jobs
